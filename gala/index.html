@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6th Annual Laced In Legacy Sneaker Ball – Y-KNOT Inc.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red:    #D42B2B;
+    --blue:   #1A5FAD;
+    --green:  #2A9E4F;
+    --orange: #F07020;
+    --yellow: #F5C518;
+
+    --red-glow:    rgba(212,43,43,0.18);
+    --blue-glow:   rgba(26,95,173,0.18);
+    --green-glow:  rgba(42,158,79,0.18);
+    --orange-glow: rgba(240,112,32,0.18);
+    --yellow-glow: rgba(245,197,24,0.18);
+
+    --black:      #080808;
+    --near-black: #111111;
+    --dark:       #181818;
+    --mid:        #242424;
+    --text:       #EDE8E0;
+    --muted:      #888;
+    --white:      #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── COLOR STRIPE at top ── */
+  .color-stripe {
+    height: 5px;
+    background: linear-gradient(to right,
+      var(--red) 0%, var(--red) 20%,
+      var(--blue) 20%, var(--blue) 40%,
+      var(--green) 40%, var(--green) 60%,
+      var(--orange) 60%, var(--orange) 80%,
+      var(--yellow) 80%, var(--yellow) 100%
+    );
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 5px; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px;
+    background: linear-gradient(to bottom, rgba(8,8,8,0.97) 70%, transparent);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px; letter-spacing: 4px;
+    background: linear-gradient(90deg, var(--red), var(--orange), var(--yellow));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a {
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text); text-decoration: none; opacity: 0.6;
+    transition: opacity 0.2s, color 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--yellow); }
+  .nav-cta {
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    background: var(--red); color: #fff; padding: 10px 24px;
+    border: none; cursor: pointer; font-weight: 500;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: #b52020; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding-bottom: 80px;
+    overflow: hidden;
+    background: var(--black);
+  }
+
+  /* multicolor radial glows */
+  .hero-bg {
+    position: absolute; inset: 0; pointer-events: none;
+  }
+  .hero-bg::before {
+    content: '';
+    position: absolute; top: 10%; right: 5%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(26,95,173,0.14) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute; bottom: 15%; left: 10%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(42,158,79,0.10) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-glow-orange {
+    position: absolute; top: 40%; right: 30%;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(240,112,32,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  /* ghost year */
+  .hero-year-stamp {
+    position: absolute; top: 120px; right: 40px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 200px; line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(245,197,24,0.12);
+    pointer-events: none; letter-spacing: -8px; user-select: none;
+  }
+
+  .hero-edition {
+    position: absolute; top: 148px; left: 48px;
+    font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--yellow); opacity: 0.7;
+    writing-mode: vertical-lr; transform: rotate(180deg);
+  }
+
+  .hero-content { position: relative; padding: 0 48px; max-width: 950px; }
+
+  .hero-overline {
+    font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 24px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .hero-overline::before {
+    content: ''; display: block; width: 40px; height: 2px;
+    background: linear-gradient(90deg, var(--red), var(--orange));
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(56px, 9vw, 120px);
+    font-weight: 900; line-height: 0.88; color: #fff;
+    margin-bottom: 8px;
+  }
+  .hero-title .word-laced { color: var(--red); }
+  .hero-title .word-in    { font-style: italic; color: var(--yellow); }
+  .hero-title .word-legacy { color: var(--white); }
+
+  .hero-subtitle {
+    font-size: clamp(14px, 1.8vw, 17px);
+    color: var(--muted); font-style: italic;
+    margin: 24px 0 40px;
+    font-family: 'Playfair Display', serif;
+    max-width: 480px; line-height: 1.6;
+  }
+
+  .hero-meta {
+    display: flex; align-items: stretch; gap: 0;
+    margin-bottom: 44px; max-width: 620px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .meta-item {
+    flex: 1; padding: 20px 24px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .meta-item:not(:last-child) { border-right: 1px solid rgba(255,255,255,0.08); }
+  .meta-item:nth-child(1) { border-top: 3px solid var(--red); }
+  .meta-item:nth-child(2) { border-top: 3px solid var(--blue); }
+  .meta-item:nth-child(3) { border-top: 3px solid var(--green); }
+  .meta-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
+  .meta-value { font-size: 15px; font-weight: 500; color: #fff; }
+  .meta-note  { font-size: 11px; color: rgba(136,136,136,0.7); }
+
+  .hero-actions { display: flex; align-items: center; gap: 16px; }
+  .btn-primary {
+    display: inline-block; padding: 15px 38px;
+    background: var(--red); color: #fff;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    font-weight: 500; text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: #b52020; transform: translateY(-2px); }
+  .btn-outline {
+    display: inline-block; padding: 15px 38px;
+    background: transparent; color: var(--text);
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    font-weight: 400; text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
+
+  .hashtag {
+    position: absolute; bottom: 80px; right: 48px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px; letter-spacing: 5px;
+    background: linear-gradient(90deg, var(--yellow), var(--orange));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    opacity: 0.7;
+  }
+
+  /* ── COLOR BAND DIVIDER ── */
+  .color-band {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    height: 6px;
+  }
+  .band-r { background: var(--red); }
+  .band-b { background: var(--blue); }
+  .band-g { background: var(--green); }
+  .band-o { background: var(--orange); }
+  .band-y { background: var(--yellow); }
+
+  /* ── THEME SECTION ── */
+  .theme-section {
+    padding: 100px 48px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .section-label {
+    font-size: 10px; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::after { content: ''; display: block; width: 30px; height: 2px; background: var(--orange); }
+  .theme-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 3.5vw, 50px);
+    font-weight: 700; line-height: 1.1; color: #fff; margin-bottom: 28px;
+  }
+  .theme-heading .hl-red    { color: var(--red); }
+  .theme-heading .hl-yellow { color: var(--yellow); font-style: italic; }
+  .theme-body { font-size: 15px; line-height: 1.9; color: rgba(237,232,224,0.7); margin-bottom: 20px; }
+
+  /* animated 6 */
+  .theme-visual {
+    position: relative; display: flex;
+    align-items: center; justify-content: center;
+  }
+  .big-six-wrap { position: relative; display: inline-block; }
+  .big-six {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 220px; line-height: 1;
+    background: linear-gradient(135deg, var(--red) 0%, var(--orange) 30%, var(--yellow) 60%, var(--green) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    position: relative; z-index: 1;
+    filter: drop-shadow(0 0 40px rgba(240,112,32,0.3));
+  }
+  .big-six-label {
+    position: absolute; bottom: 12px; width: 100%; text-align: center;
+    font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: var(--muted);
+  }
+  /* decorative dots around the 6 */
+  .dot {
+    position: absolute; border-radius: 50%;
+    animation: float 3s ease-in-out infinite;
+  }
+  .dot-1 { width:12px; height:12px; background:var(--red);    top:-10px;  left:-10px; animation-delay:0s; }
+  .dot-2 { width:8px;  height:8px;  background:var(--blue);   top:30px;   right:-20px; animation-delay:0.5s; }
+  .dot-3 { width:10px; height:10px; background:var(--green);  bottom:40px; left:-20px; animation-delay:1s; }
+  .dot-4 { width:6px;  height:6px;  background:var(--yellow); bottom:-5px; right:10px; animation-delay:1.5s; }
+  .dot-5 { width:14px; height:14px; background:var(--orange); top:50%;    right:-30px; animation-delay:0.8s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* ── STATS ── */
+  .stats-section {
+    background: var(--near-black);
+    padding: 80px 48px;
+  }
+  .stats-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .stat-item {
+    text-align: center; padding: 50px 24px;
+    position: relative;
+  }
+  .stat-item:not(:last-child)::after {
+    content: ''; position: absolute; right: 0; top: 20%; bottom: 20%;
+    width: 1px; background: rgba(255,255,255,0.06);
+  }
+  .stat-item:nth-child(1) { border-top: 4px solid var(--red); }
+  .stat-item:nth-child(2) { border-top: 4px solid var(--blue); }
+  .stat-item:nth-child(3) { border-top: 4px solid var(--green); }
+  .stat-item:nth-child(4) { border-top: 4px solid var(--orange); }
+  .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 60px; line-height: 1; margin-bottom: 10px;
+  }
+  .stat-item:nth-child(1) .stat-number { color: var(--red); }
+  .stat-item:nth-child(2) .stat-number { color: var(--blue); }
+  .stat-item:nth-child(3) .stat-number { color: var(--green); }
+  .stat-item:nth-child(4) .stat-number { color: var(--orange); }
+  .stat-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); line-height: 1.6; }
+
+  /* ── DRESS CODE & PURPOSE ── */
+  .dresscode-section {
+    padding: 100px 48px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .dresscode-card {
+    background: var(--near-black);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 56px 48px;
+    position: relative; overflow: hidden;
+    border-left: 4px solid var(--blue);
+  }
+  .dresscode-card::after {
+    content: '';
+    position: absolute; bottom: -80px; right: -80px;
+    width: 220px; height: 220px;
+    background: radial-gradient(circle, var(--blue-glow), transparent 70%);
+    border-radius: 50%;
+  }
+  .dresscode-icon { margin-bottom: 20px; line-height: 1; }
+  .dresscode-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 34px; letter-spacing: 3px; color: #fff; margin-bottom: 16px;
+  }
+  .dresscode-desc { font-size: 14px; line-height: 1.8; color: rgba(237,232,224,0.65); margin-bottom: 24px; }
+  .dresscode-note {
+    display: inline-block; font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--blue); border-bottom: 1px solid rgba(26,95,173,0.4); padding-bottom: 4px;
+  }
+
+  /* ── SCHEDULE ── */
+  .schedule-section { background: var(--near-black); padding: 100px 48px; }
+  .schedule-inner { max-width: 780px; margin: 0 auto; }
+  .schedule-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px; letter-spacing: 4px; color: #fff;
+    margin-bottom: 60px;
+    display: flex; align-items: center; gap: 24px;
+  }
+  .schedule-heading::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.07); }
+
+  /* timeline items; dots cycle through brand colors */
+  .schedule-item {
+    display: grid; grid-template-columns: 90px 1fr;
+    gap: 32px; align-items: start;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+  }
+  .schedule-item::before {
+    content: ''; position: absolute;
+    left: 79px; top: 0; bottom: 0;
+    width: 1px; background: rgba(255,255,255,0.07);
+  }
+  .schedule-time {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 17px; letter-spacing: 2px;
+    padding-top: 3px; text-align: right; padding-right: 12px;
+  }
+  .schedule-dot {
+    position: absolute; left: 74px; top: 32px;
+    width: 12px; height: 12px; border-radius: 50%;
+    border: 2px solid var(--near-black);
+  }
+  .schedule-item:nth-child(1) .schedule-time { color: var(--red); }
+  .schedule-item:nth-child(1) .schedule-dot  { background: var(--red); }
+  .schedule-item:nth-child(2) .schedule-time { color: var(--orange); }
+  .schedule-item:nth-child(2) .schedule-dot  { background: var(--orange); }
+  .schedule-item:nth-child(3) .schedule-time { color: var(--yellow); }
+  .schedule-item:nth-child(3) .schedule-dot  { background: var(--yellow); }
+  .schedule-item:nth-child(4) .schedule-time { color: var(--green); }
+  .schedule-item:nth-child(4) .schedule-dot  { background: var(--green); }
+  .schedule-item:nth-child(5) .schedule-time { color: var(--blue); }
+  .schedule-item:nth-child(5) .schedule-dot  { background: var(--blue); }
+  .schedule-item:nth-child(6) .schedule-time { color: var(--red); }
+  .schedule-item:nth-child(6) .schedule-dot  { background: var(--red); }
+
+  .schedule-event { font-size: 17px; font-weight: 500; color: #fff; margin-bottom: 6px; padding-left: 22px; }
+  .schedule-detail { font-size: 13px; color: var(--muted); line-height: 1.6; padding-left: 22px; }
+
+  /* ── SPONSORSHIP ── */
+  .sponsor-section { padding: 100px 48px; max-width: 1200px; margin: 0 auto; }
+  .sponsor-header { text-align: center; margin-bottom: 60px; }
+  .sponsor-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 50px);
+    font-weight: 700; color: #fff; margin-bottom: 16px;
+  }
+  .sponsor-title .hl { font-style: italic; color: var(--yellow); }
+  .sponsor-subtitle { font-size: 14px; color: var(--muted); max-width: 480px; margin: 0 auto; line-height: 1.8; }
+
+  .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px; }
+  .tier {
+    background: var(--near-black);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 44px 32px;
+    position: relative; overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .tier:hover { transform: translateY(-4px); }
+
+  /* tier color accents */
+  .tier-bronze { border-top: 4px solid var(--green); }
+  .tier-gold   { border-top: 4px solid var(--orange); background: linear-gradient(160deg, rgba(240,112,32,0.07) 0%, var(--near-black) 60%); }
+  .tier-legacy { border-top: 4px solid var(--red); }
+
+  .tier-badge {
+    position: absolute; top: 0; right: 0;
+    background: var(--orange); color: #fff;
+    font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+    font-weight: 600; padding: 5px 14px;
+  }
+  .tier-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px; letter-spacing: 3px; margin-bottom: 8px;
+  }
+  .tier-bronze .tier-name { color: var(--green); }
+  .tier-gold   .tier-name { color: var(--orange); }
+  .tier-legacy .tier-name { color: var(--red); }
+
+  .tier-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px; font-weight: 900; color: #fff; margin-bottom: 24px;
+  }
+  .tier-amount span { font-size: 22px; opacity: 0.5; }
+  .tier-features { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 32px; }
+  .tier-features li { font-size: 13px; color: rgba(237,232,224,0.65); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+  .tier-bronze .tier-features li::before { content: '→'; color: var(--green); flex-shrink: 0; }
+  .tier-gold   .tier-features li::before { content: '→'; color: var(--orange); flex-shrink: 0; }
+  .tier-legacy .tier-features li::before { content: '→'; color: var(--red); flex-shrink: 0; }
+
+  .tier-btn {
+    display: block; width: 100%; padding: 13px;
+    background: transparent;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase; text-align: center;
+    cursor: pointer; text-decoration: none; transition: 0.2s;
+  }
+  .tier-bronze .tier-btn { border: 1px solid rgba(42,158,79,0.4);  color: var(--green); }
+  .tier-bronze .tier-btn:hover { background: var(--green); color: #fff; }
+  .tier-gold   .tier-btn { border: 1px solid rgba(240,112,32,0.4); color: var(--orange); }
+  .tier-gold   .tier-btn:hover { background: var(--orange); color: #fff; }
+  .tier-legacy .tier-btn { border: 1px solid rgba(212,43,43,0.4);  color: var(--red); }
+  .tier-legacy .tier-btn:hover { background: var(--red); color: #fff; }
+
+  /* ── GIVE SECTION ── */
+  .give-section { background: var(--near-black); padding: 80px 48px; }
+  .give-inner {
+    max-width: 900px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: center;
+    border-left: 4px solid var(--yellow);
+    padding-left: 48px;
+  }
+  .give-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 14px; line-height: 1.2; }
+  .give-title em { font-style: italic; color: var(--yellow); }
+  .give-body { font-size: 14px; line-height: 1.8; color: var(--muted); }
+  .give-actions { display: flex; flex-direction: column; gap: 14px; }
+  .give-actions .btn-primary { text-align: center; }
+  .give-actions .btn-yellow {
+    display: block; padding: 15px 38px; text-align: center;
+    background: transparent; border: 1px solid rgba(245,197,24,0.4);
+    color: var(--yellow); font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    text-decoration: none; transition: 0.2s;
+  }
+  .give-actions .btn-yellow:hover { background: var(--yellow); color: var(--black); }
+
+  /* ── GALLERY ── */
+  .gallery-section { padding: 100px 48px; }
+  .gallery-header {
+    max-width: 1200px; margin: 0 auto 48px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+  }
+  .gallery-title { font-family: 'Bebas Neue', sans-serif; font-size: 52px; letter-spacing: 4px; color: #fff; }
+  .gallery-subtitle { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
+
+  .gallery-years { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 64px; }
+  .gallery-year-label { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
+  .year-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 76px; line-height: 1; color: transparent;
+  }
+  .gallery-year-block:nth-child(1) .year-num { -webkit-text-stroke: 1.5px var(--orange); }
+  .gallery-year-block:nth-child(2) .year-num { -webkit-text-stroke: 1.5px var(--green); }
+  .gallery-year-block:nth-child(3) .year-num { -webkit-text-stroke: 1.5px var(--red); }
+
+  .year-theme-name { font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px; color: var(--text); }
+  .year-theme-sub  { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+
+  .gallery-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+  .gallery-thumb { aspect-ratio: 1; overflow: hidden; position: relative; }
+  .gallery-thumb:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+  .gallery-img-placeholder {
+    width: 100%; height: 100%; min-height: 110px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 11px; letter-spacing: 2px;
+    background: var(--dark);
+  }
+  .gallery-year-block:nth-child(1) .gallery-img-placeholder { color: rgba(240,112,32,0.3); }
+  .gallery-year-block:nth-child(2) .gallery-img-placeholder { color: rgba(42,158,79,0.3); }
+  .gallery-year-block:nth-child(3) .gallery-img-placeholder { color: rgba(212,43,43,0.3); }
+
+  /* ── FOOTER CTA ── */
+  .footer-cta {
+    position: relative; padding: 120px 48px;
+    text-align: center; overflow: hidden; background: var(--black);
+  }
+  .footer-cta-bg-text {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(80px, 14vw, 180px);
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.04);
+    white-space: nowrap; user-select: none; letter-spacing: 10px;
+  }
+  /* colorful radial glows in footer */
+  .footer-cta::before {
+    content: '';
+    position: absolute; top: 20%; left: 20%;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(212,43,43,0.08), transparent 70%);
+    border-radius: 50%;
+  }
+  .footer-cta::after {
+    content: '';
+    position: absolute; bottom: 20%; right: 20%;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(26,95,173,0.08), transparent 70%);
+    border-radius: 50%;
+  }
+  .footer-cta-content { position: relative; z-index: 1; }
+  .footer-cta-pre { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: var(--orange); margin-bottom: 20px; }
+  .footer-cta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(44px, 7vw, 88px);
+    font-weight: 900; color: #fff; line-height: 1; margin-bottom: 20px;
+  }
+  .footer-cta-title em { font-style: italic; color: var(--yellow); }
+  .footer-cta-sub { font-size: 15px; color: var(--muted); margin-bottom: 48px; font-style: italic; font-family: 'Playfair Display', serif; }
+  .footer-cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--near-black); padding: 60px 48px 36px; }
+  .color-stripe-footer {
+    height: 4px; margin-bottom: 48px;
+    background: linear-gradient(to right,
+      var(--red) 0%, var(--red) 20%,
+      var(--blue) 20%, var(--blue) 40%,
+      var(--green) 40%, var(--green) 60%,
+      var(--orange) 60%, var(--orange) 80%,
+      var(--yellow) 80%, var(--yellow) 100%
+    );
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 48px;
+  }
+  .footer-brand-name {
+    font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 4px; margin-bottom: 14px;
+    background: linear-gradient(90deg, var(--red), var(--orange), var(--yellow));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .footer-brand-desc { font-size: 13px; line-height: 1.8; color: var(--muted); max-width: 300px; }
+  .footer-col-title { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--orange); margin-bottom: 20px; }
+  .footer-links { display: flex; flex-direction: column; gap: 12px; }
+  .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--text); }
+  .footer-bottom {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px;
+    font-size: 11px; color: rgba(136,136,136,0.5); letter-spacing: 1px;
+  }
+  .footer-hashtag {
+    font-family: 'Bebas Neue', sans-serif; letter-spacing: 4px;
+    background: linear-gradient(90deg, var(--red), var(--orange), var(--yellow));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  /* ── SCROLL FADE ── */
+  .fade-up {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: none; }
+  .fade-up:nth-child(2) { transition-delay: 0.1s; }
+  .fade-up:nth-child(3) { transition-delay: 0.2s; }
+  .fade-up:nth-child(4) { transition-delay: 0.3s; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .hero-content { padding: 0 20px; }
+    .hero-year-stamp { font-size: 100px; right: 10px; }
+    .hero-edition { display: none; }
+    .hero-meta { flex-direction: column; }
+    .meta-item:nth-child(1), .meta-item:nth-child(2) { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .theme-section, .dresscode-section { grid-template-columns: 1fr; gap: 40px; padding: 60px 20px; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .tiers { grid-template-columns: 1fr; }
+    .give-inner { grid-template-columns: 1fr; padding-left: 24px; }
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+    .gallery-thumb:first-child { grid-column: span 1; grid-row: span 1; }
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    .footer-cta-btns { flex-direction: column; align-items: center; }
+    .schedule-section, .sponsor-section { padding: 60px 20px; }
+    .gallery-section { padding: 60px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COLOR STRIPE -->
+<div class="color-stripe"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Y-KNOT INC.</div>
+  <div class="nav-links">
+    <a href="#">About</a>
+    <a href="#">Programs</a>
+    <a href="#">Events</a>
+    <a href="#">Gallery</a>
+  </div>
+  <a href="#rsvp" class="nav-cta">Request Invite</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-glow-orange"></div>
+  <div class="hero-year-stamp">2026</div>
+  <div class="hero-edition">6th Annual Edition</div>
+
+  <div class="hero-content">
+    <div class="hero-overline">Y-KNOT Inc. Presents</div>
+
+    <h1 class="hero-title">
+      <span class="word-laced">Laced</span><br>
+      <span class="word-in">In</span><br>
+      <span class="word-legacy">Legacy</span>
+    </h1>
+
+    <p class="hero-subtitle">Where sneakers meet sophistication — and every step leaves a legacy.</p>
+
+    <div class="hero-meta">
+      <div class="meta-item">
+        <span class="meta-label">Date</span>
+        <span class="meta-value">Saturday, Dec 5</span>
+        <span class="meta-note">2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Doors Open</span>
+        <span class="meta-value">6:30 PM</span>
+        <span class="meta-note">Gala Begins 7:03 PM</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Venue</span>
+        <span class="meta-value">TBD</span>
+        <span class="meta-note">Details Forthcoming</span>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#rsvp" class="btn-primary">Request an Invitation</a>
+      <a href="#sponsor" class="btn-outline">Become a Sponsor</a>
+    </div>
+  </div>
+
+  <div class="hashtag">#LacedInLegacy</div>
+</section>
+
+<!-- COLOR BAND -->
+<div class="color-band">
+  <div class="band-r"></div><div class="band-b"></div>
+  <div class="band-g"></div><div class="band-o"></div>
+  <div class="band-y"></div>
+</div>
+
+<!-- THEME -->
+<section class="theme-section">
+  <div>
+    <div class="section-label fade-up">The Concept</div>
+    <h2 class="theme-heading fade-up">
+      Six years of <span class="hl-red">stepping</span><br>
+      into <span class="hl-yellow">purpose.</span>
+    </h2>
+    <p class="theme-body fade-up">Sneakers carry our stories. Every scuff, every mile, every step forward represents a journey — and for the young people Y-KNOT serves, that journey is just beginning. This year, we celebrate six years of walking alongside our community, lacing up for the next generation, and building something that will outlast all of us.</p>
+    <p class="theme-body fade-up">Dress your best. Wear your favorites. Leave a legacy.</p>
+  </div>
+  <div class="theme-visual fade-up">
+    <div class="big-six-wrap">
+      <div class="dot dot-1"></div>
+      <div class="dot dot-2"></div>
+      <div class="dot dot-3"></div>
+      <div class="dot dot-4"></div>
+      <div class="dot dot-5"></div>
+      <div class="big-six">6</div>
+      <div class="big-six-label">Years of Impact</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="stats-inner">
+    <div class="stat-item fade-up">
+      <div class="stat-number">6</div>
+      <div class="stat-label">Consecutive<br>Annual Galas</div>
+    </div>
+    <div class="stat-item fade-up">
+      <div class="stat-number">600+</div>
+      <div class="stat-label">Students Served<br>Annually</div>
+    </div>
+    <div class="stat-item fade-up">
+      <div class="stat-number">500+</div>
+      <div class="stat-label">Volunteer<br>Hours</div>
+    </div>
+    <div class="stat-item fade-up">
+      <div class="stat-number">1,500+</div>
+      <div class="stat-label">Families<br>Impacted</div>
+    </div>
+  </div>
+</section>
+
+<!-- DRESS CODE & PURPOSE -->
+<section class="dresscode-section">
+  <div>
+    <div class="section-label fade-up">The Evening</div>
+    <h2 class="theme-heading fade-up">A night unlike<br>any other.</h2>
+    <p class="theme-body fade-up">Your support fuels the scholarships, mentorships, and community programs that change the trajectory of young lives across seven Maryland schools. Every ticket, every bid, and every sponsorship dollar goes directly to expanding Y-KNOT's reach so more young people can find their footing and step confidently into their futures.</p>
+  </div>
+  <div class="dresscode-card fade-up">
+    <div class="dresscode-icon">
+      <!-- Y-KNOT Branded Sneaker SVG -->
+      <svg width="100" height="72" viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sole / outsole -->
+        <path d="M10 112 Q12 125 30 128 L170 128 Q190 128 192 118 L185 108 Q160 102 130 104 L50 104 Q20 104 10 112Z" fill="#1A1A1A" stroke="#333" stroke-width="1.5"/>
+        <!-- Midsole stripe -->
+        <path d="M15 110 L180 108" stroke="var(--yellow)" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- Main upper body -->
+        <path d="M28 104 L28 72 Q30 50 55 44 L120 38 Q145 36 162 48 L178 68 L182 104Z" fill="#111" stroke="#2a2a2a" stroke-width="1"/>
+
+        <!-- Toe box -->
+        <path d="M28 104 L28 72 Q26 55 38 50 L62 46 Q52 60 50 80 L45 104Z" fill="#D42B2B"/>
+
+        <!-- Midfoot panel -->
+        <path d="M50 104 L50 80 Q52 58 65 48 L100 40 L100 64 Q88 72 80 86 L68 104Z" fill="#1A5FAD"/>
+
+        <!-- Rear quarter panel -->
+        <path d="M80 104 L80 86 Q90 70 102 64 L128 42 L138 58 Q128 72 120 90 L112 104Z" fill="#2A9E4F"/>
+
+        <!-- Heel counter -->
+        <path d="M138 58 L162 48 Q175 55 178 68 L182 104 L148 104 Q142 90 138 72Z" fill="#F07020"/>
+
+        <!-- Lace area / tongue -->
+        <path d="M62 46 L100 40 L100 64 Q82 66 70 68 L62 46Z" fill="#222" stroke="#333" stroke-width="1"/>
+
+        <!-- Laces - 4 pairs in brand colors -->
+        <line x1="64" y1="50" x2="97" y2="44" stroke="var(--red)"    stroke-width="2" stroke-linecap="round"/>
+        <line x1="64" y1="55" x2="97" y2="50" stroke="var(--blue)"   stroke-width="2" stroke-linecap="round"/>
+        <line x1="65" y1="60" x2="97" y2="56" stroke="var(--green)"  stroke-width="2" stroke-linecap="round"/>
+        <line x1="66" y1="65" x2="97" y2="61" stroke="var(--yellow)" stroke-width="2" stroke-linecap="round"/>
+
+        <!-- Y-KNOT text on side -->
+        <text x="92" y="100" font-family="'Bebas Neue', sans-serif" font-size="13" fill="var(--yellow)" letter-spacing="2" opacity="0.9">Y-KNOT</text>
+
+        <!-- Ankle collar -->
+        <path d="M138 58 Q148 44 160 40 Q170 38 178 48 L182 68" stroke="var(--yellow)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+        <!-- Toe cap stitching detail -->
+        <path d="M30 80 Q34 65 44 57" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
+
+        <!-- Star accent on heel -->
+        <text x="155" y="84" font-family="sans-serif" font-size="14" fill="var(--orange)" opacity="0.8">★</text>
+      </svg>
+    </div>
+    <div class="dresscode-title">Dress Code</div>
+    <p class="dresscode-desc">Black tie or formal attire, elevated with your favorite pair of sneakers. Think tuxedos, gowns, and classic kicks. The more creative, the better — this is your moment to express both elegance and individuality.</p>
+    <span class="dresscode-note">Formal Attire + Sneakers Required</span>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule-section" id="schedule">
+  <div class="schedule-inner">
+    <div class="schedule-heading fade-up">Evening Schedule</div>
+
+    <div class="schedule-item fade-up">
+      <div class="schedule-time">6:30</div>
+      <div class="schedule-dot"></div>
+      <div>
+        <div class="schedule-event">Doors Open & Arrivals</div>
+        <div class="schedule-detail">Welcome reception, cocktail hour, and sneaker showcase. Meet and mingle with fellow supporters and community leaders.</div>
+      </div>
+    </div>
+    <div class="schedule-item fade-up">
+      <div class="schedule-time">7:03</div>
+      <div class="schedule-dot"></div>
+      <div>
+        <div class="schedule-event">Gala Program Begins</div>
+        <div class="schedule-detail">Welcome remarks, recognition of community partners, and opening of the silent auction.</div>
+      </div>
+    </div>
+    <div class="schedule-item fade-up">
+      <div class="schedule-time">7:30</div>
+      <div class="schedule-dot"></div>
+      <div>
+        <div class="schedule-event">Dinner Service</div>
+        <div class="schedule-detail">A seated dinner accompanied by powerful stories of impact from Y-KNOT students, mentors, and alumni.</div>
+      </div>
+    </div>
+    <div class="schedule-item fade-up">
+      <div class="schedule-time">8:30</div>
+      <div class="schedule-dot"></div>
+      <div>
+        <div class="schedule-event">Legacy Awards Ceremony</div>
+        <div class="schedule-detail">Honoring individuals and organizations whose steps have shaped our community.</div>
+      </div>
+    </div>
+    <div class="schedule-item fade-up">
+      <div class="schedule-time">9:00</div>
+      <div class="schedule-dot"></div>
+      <div>
+        <div class="schedule-event">Live Entertainment & Dancing</div>
+        <div class="schedule-detail">Celebrate six years and step boldly into the next chapter on the dance floor.</div>
+      </div>
+    </div>
+    <div class="schedule-item fade-up">
+      <div class="schedule-time">9:30</div>
+      <div class="schedule-dot"></div>
+      <div>
+        <div class="schedule-event">Silent Auction Closes</div>
+        <div class="schedule-detail">Last chance to place your bids before winners are announced.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPONSORSHIP -->
+<section class="sponsor-section" id="sponsor">
+  <div class="sponsor-header fade-up">
+    <div class="section-label" style="justify-content:center; margin-bottom:14px;">Become a Sponsor</div>
+    <h2 class="sponsor-title">Your brand, <span class="hl">our legacy</span>.</h2>
+    <p class="sponsor-subtitle">Align your organization with Y-KNOT's mission and gain visibility with 200+ community leaders, professionals, and changemakers.</p>
+  </div>
+  <div class="tiers">
+    <div class="tier tier-bronze fade-up">
+      <div class="tier-name">Green Lace</div>
+      <div class="tier-amount"><span>$</span>500</div>
+      <ul class="tier-features">
+        <li>Name in the event program</li>
+        <li>Social media recognition</li>
+        <li>2 complimentary tickets</li>
+      </ul>
+      <a href="#" class="tier-btn">Inquire Now</a>
+    </div>
+    <div class="tier tier-gold fade-up">
+      <div class="tier-badge">Most Popular</div>
+      <div class="tier-name">Orange Lace</div>
+      <div class="tier-amount"><span>$</span>1,500</div>
+      <ul class="tier-features">
+        <li>Logo on backdrop & event program</li>
+        <li>Dedicated social media feature</li>
+        <li>Table for 8 with premium seating</li>
+        <li>Silent auction item recognition</li>
+        <li>Verbal acknowledgment at program</li>
+      </ul>
+      <a href="#" class="tier-btn">Inquire Now</a>
+    </div>
+    <div class="tier tier-legacy fade-up">
+      <div class="tier-name">Red Lace</div>
+      <div class="tier-amount"><span>$</span>5,000</div>
+      <ul class="tier-features">
+        <li>Presenting sponsor — all materials</li>
+        <li>Speaking opportunity at program</li>
+        <li>Table for 10 with VIP treatment</li>
+        <li>Year-round website & newsletter</li>
+        <li>Custom activation opportunity</li>
+        <li>1-year Y-KNOT partnership</li>
+      </ul>
+      <a href="#" class="tier-btn">Inquire Now</a>
+    </div>
+  </div>
+  <div style="text-align:center;">
+    <a href="#" class="btn-outline" style="display:inline-block;">Download Full Sponsorship Deck</a>
+  </div>
+</section>
+
+<!-- CAN'T ATTEND -->
+<section class="give-section">
+  <div class="give-inner">
+    <div>
+      <h3 class="give-title">Can't make it? <em>Still leave your mark.</em></h3>
+      <p class="give-body">Can't attend in person? Your generosity still matters. Make a donation, bid in our online silent auction, or share the event with someone who should be in the room.</p>
+    </div>
+    <div class="give-actions">
+      <a href="#" class="btn-primary">Make a Donation</a>
+      <a href="#" class="btn-yellow">Join the Silent Auction</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="gallery-header">
+    <h2 class="gallery-title">Past Galas</h2>
+    <span class="gallery-subtitle">2019 — 2025</span>
+  </div>
+  <div class="gallery-years">
+
+    <div class="gallery-year-block fade-up">
+      <div class="gallery-year-label">
+        <div class="year-num">2024</div>
+        <div class="year-theme">
+          <span class="year-theme-name">A Night of Elegance in Orange</span>
+          <span class="year-theme-sub">5th Annual</span>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-thumb"><div class="gallery-img-placeholder">PHOTO</div></div>
+        <div class="gallery-thumb"><div class="gallery-img-placeholder">PHOTO</div></div>
+        <div class="gallery-thumb"><div class="gallery-img-placeholder">PHOTO</div></div>
+        <div class="gallery-thumb"><div class="gallery-img-placeholder">PHOTO</div></div>
+        <div class="gallery-thumb"><div class="gallery-img-placeholder">PHOTO</div></div>
+        <div class="gallery-thumb"><div class="gallery-img-placeholder">PHOTO</div></div>
+        <div class="gallery-thumb"><div class="gallery-img-placeholder">PHOTO</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-year-block fade-up">
+      <div class="gallery-year-label">
+        <div class="year-num">2023</div>
+        <div class="year-theme">
+          <span class="year-theme-name">You Have to Be Seen Green</span>
+          <span class="year-theme-sub">Growing, Resilient, Effective, Evolving & Noble</span>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-thumb"><div class="gallery-img-placeholder">PHOTO</div></div>
+        <div class="gallery-thumb"><div class="gallery-img-placeholder">PHOTO</div></div>
+        <div class="gallery-thumb"><div class="gallery-img-placeholder">PHOTO</div></div>
+        <div class="gallery-thumb"><div class="gallery-img-placeholder">PHOTO</div></div>
+        <div class="gallery-thumb"><div class="gallery-img-placeholder">PHOTO</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-year-block fade-up">
+      <div class="gallery-year-label">
+        <div class="year-num">2022</div>
+        <div class="year-theme">
+          <span class="year-theme-name">Intentionally InspiRED</span>
+          <span class="year-theme-sub">3rd Annual</span>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-thumb"><div class="gallery-img-placeholder">PHOTO</div></div>
+        <div class="gallery-thumb"><div class="gallery-img-placeholder">PHOTO</div></div>
+        <div class="gallery-thumb"><div class="gallery-img-placeholder">PHOTO</div></div>
+        <div class="gallery-thumb"><div class="gallery-img-placeholder">PHOTO</div></div>
+        <div class="gallery-thumb"><div class="gallery-img-placeholder">PHOTO</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<div class="color-band"><div class="band-r"></div><div class="band-b"></div><div class="band-g"></div><div class="band-o"></div><div class="band-y"></div></div>
+<section class="footer-cta" id="rsvp">
+  <div class="footer-cta-bg-text">LEGACY</div>
+  <div class="footer-cta-content">
+    <div class="footer-cta-pre">December 5, 2026 · Doors Open 6:30 PM · Gala Begins 7:03 PM</div>
+    <h2 class="footer-cta-title">Secure Your<br><em>Seat</em></h2>
+    <p class="footer-cta-sub">Tickets are limited. Every seat filled is a step forward for our community.</p>
+    <div class="footer-cta-btns">
+      <a href="#" class="btn-primary">Request an Invitation</a>
+      <a href="#" class="btn-outline">Share the Event</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="color-stripe-footer"></div>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">Y-KNOT Inc.</div>
+      <p class="footer-brand-desc">Empowering youth through Knowledge, Nurturing, Opportunities, and Teaching. Serving 600+ students annually across seven Maryland schools since 2018.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Programs</a>
+        <a href="#">Mentoring</a>
+        <a href="#">Donate</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-links">
+        <a href="#"><span class="__cf_email__" data-cfemail="e38a8d858ca39a888d8c978a8d80cd8c9184">[email&#160;protected]</span></a>
+        <a href="#">301-839-YNOT</a>
+        <a href="#">6178 Oxon Hill Rd, Suite 303</a>
+        <a href="#">Oxon Hill, MD 20745</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Y-KNOT Inc. · Registered 501(c)(3) Nonprofit</span>
+    <span class="footer-hashtag">#LacedInLegacy</span>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.

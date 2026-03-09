@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6th Annual Laced In Legacy Sneaker Ball – Y-KNOT Inc.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;900&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red:       #CC2B2B;
+    --red-light: #E84040;
+    --red-dim:   #8C1A1A;
+    --green:     #3A9A3C;
+    --blue:      #2A6DB5;
+    --orange:    #E87820;
+    --yellow:    #F0C000;
+    --black:     #090909;
+    --surface:   #141414;
+    --surface2:  #1C1C1C;
+    --surface3:  #242424;
+    --text:      #EEE8E0;
+    --text-dim:  #888070;
+    --white:     #FAFAF5;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  .rule {
+    width: 60px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--red), transparent);
+    margin: 0 auto;
+  }
+
+  /* ══════════════════ HERO ══════════════════ */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px 80px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 10%, rgba(204,43,43,0.10) 0%, transparent 65%),
+      radial-gradient(ellipse 40% 30% at 15% 85%, rgba(58,154,60,0.05) 0%, transparent 50%),
+      radial-gradient(ellipse 40% 30% at 85% 85%, rgba(42,109,181,0.05) 0%, transparent 50%);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute; inset: 32px;
+    border: 1px solid rgba(204,43,43,0.14);
+    pointer-events: none;
+  }
+
+  .hero-corner {
+    position: absolute;
+    width: 28px; height: 28px;
+    pointer-events: none; z-index: 2;
+  }
+  .hero-corner::before, .hero-corner::after {
+    content: '';
+    position: absolute;
+    background: var(--red);
+    opacity: 0.75;
+  }
+  .hero-corner::before { width: 100%; height: 2px; top: 0; left: 0; }
+  .hero-corner::after  { width: 2px; height: 100%; top: 0; left: 0; }
+  .hero-corner.tl { top: 32px; left: 32px; }
+  .hero-corner.tr { top: 32px; right: 32px; transform: scaleX(-1); }
+  .hero-corner.bl { bottom: 32px; left: 32px; transform: scaleY(-1); }
+  .hero-corner.br { bottom: 32px; right: 32px; transform: scale(-1); }
+
+  .hero-logo {
+    width: clamp(180px, 26vw, 300px);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeIn 1s 0.05s forwards;
+    filter: invert(1) brightness(1.9) contrast(0.8);
+    mix-blend-mode: screen;
+  }
+
+  .hero-badge {
+    font-family: 'Cinzel', serif;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.38em;
+    color: var(--red);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(36px, 6vw, 80px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.35s forwards;
+  }
+  .hero-title em {
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300; font-size: 1.1em;
+    color: var(--red-light);
+    display: block;
+    letter-spacing: 0.06em;
+  }
+
+  .hero-divider {
+    width: 100px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--red), transparent);
+    margin: 28px auto 32px;
+    opacity: 0;
+    animation: fadeIn 1s 0.6s forwards;
+  }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 2.2vw, 25px);
+    font-style: italic; font-weight: 300;
+    color: var(--text-dim);
+    max-width: 540px;
+    margin: 0 auto 44px;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.5s forwards;
+  }
+
+  .hero-date-block {
+    opacity: 0;
+    animation: fadeUp 0.9s 0.7s forwards;
+    margin-bottom: 0;
+  }
+
+  .hero-date {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(12px, 1.5vw, 17px);
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    color: var(--text);
+    text-transform: uppercase;
+    line-height: 2.1;
+  }
+
+  .hero-venue {
+    font-size: 12px; font-weight: 400;
+    letter-spacing: 0.16em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+  .hero-venue em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 15px;
+    color: var(--red-dim);
+    letter-spacing: 0.08em;
+  }
+
+  /* Scroll hint arrow */
+  .scroll-hint {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: fadeIn 1s 1.4s forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-dim);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .scroll-hint::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(180deg, var(--red), transparent);
+    animation: scrollPulse 2s 1.6s infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50%       { opacity: 1;   transform: scaleY(1.15); }
+  }
+
+  /* ══════════════════ STATS ══════════════════ */
+  .stats {
+    border-top: 2px solid var(--red);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: var(--surface);
+    padding: 52px 24px;
+  }
+  .stats-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .stat-item {
+    text-align: center;
+    padding: 16px 24px;
+    position: relative;
+  }
+  .stat-item + .stat-item::before {
+    content: '';
+    position: absolute; left: 0; top: 15%; height: 70%;
+    width: 1px;
+    background: rgba(255,255,255,0.07);
+  }
+  .stat-num {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 900;
+    line-height: 1; display: block;
+  }
+  .stat-item:nth-child(1) .stat-num { color: var(--green); }
+  .stat-item:nth-child(2) .stat-num { color: var(--orange); }
+  .stat-item:nth-child(3) .stat-num { color: var(--blue); }
+  .stat-label {
+    font-size: 10px; letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 12px; display: block;
+  }
+
+  /* ══════════════════ SECTION SCAFFOLDING ══════════════════ */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 96px 24px;
+  }
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--red);
+    display: block; margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 3.5vw, 46px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 44px;
+  }
+
+  /* ══════════════════ EVENT DETAIL CARDS ══════════════════ */
+  .details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 3px; margin-top: 16px;
+  }
+  .detail-card {
+    background: var(--surface);
+    padding: 40px 36px;
+    position: relative;
+    transition: background 0.3s, transform 0.3s;
+    border-top: 3px solid transparent;
+  }
+  .detail-card:nth-child(1) { border-top-color: var(--green); }
+  .detail-card:nth-child(2) { border-top-color: var(--orange); }
+  .detail-card:nth-child(3) { border-top-color: var(--blue); }
+  .detail-card:hover { background: var(--surface2); transform: translateY(-4px); }
+  .detail-icon { font-size: 22px; margin-bottom: 20px; display: block; }
+  .detail-heading {
+    font-family: 'Cinzel', serif;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 16px; display: block;
+  }
+  .detail-card:nth-child(1) .detail-heading { color: var(--green); }
+  .detail-card:nth-child(2) .detail-heading { color: var(--orange); }
+  .detail-card:nth-child(3) .detail-heading { color: var(--blue); }
+  .detail-body { font-size: 15px; color: var(--text-dim); line-height: 1.9; }
+  .detail-body strong { color: var(--text); font-weight: 500; display: block; margin-bottom: 4px; }
+
+  /* ══════════════════ TICKET PRICING ══════════════════ */
+  .tickets-section {
+    background: var(--surface);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 96px 0;
+  }
+  .tickets-inner {
+    max-width: 1100px;
+    margin: 0 auto; padding: 0 24px;
+  }
+  .tickets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 3px;
+    margin-top: 16px;
+  }
+  .ticket-card {
+    background: var(--surface2);
+    padding: 40px 32px 36px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, background 0.3s;
+    border-bottom: 3px solid transparent;
+  }
+  .ticket-card:hover { background: var(--surface3); transform: translateY(-4px); }
+
+  /* Bottom-border color per tier */
+  .ticket-card.tier-general  { border-bottom-color: var(--blue); }
+  .ticket-card.tier-general-table { border-bottom-color: var(--green); }
+  .ticket-card.tier-vip      { border-bottom-color: var(--orange); }
+  .ticket-card.tier-vip-table { border-bottom-color: var(--red); }
+
+  /* VIP badge glow */
+  .ticket-card.tier-vip,
+  .ticket-card.tier-vip-table {
+    box-shadow: inset 0 -4px 24px rgba(204,43,43,0.06);
+  }
+
+  .ticket-badge {
+    font-family: 'Cinzel', serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    display: inline-block;
+    margin-bottom: 24px;
+    align-self: flex-start;
+  }
+  .tier-general  .ticket-badge { background: rgba(42,109,181,0.15);  color: var(--blue);   border: 1px solid rgba(42,109,181,0.3); }
+  .tier-general-table .ticket-badge { background: rgba(58,154,60,0.15);  color: var(--green);  border: 1px solid rgba(58,154,60,0.3); }
+  .tier-vip      .ticket-badge { background: rgba(232,120,32,0.15); color: var(--orange); border: 1px solid rgba(232,120,32,0.3); }
+  .tier-vip-table .ticket-badge { background: rgba(204,43,43,0.15); color: var(--red);    border: 1px solid rgba(204,43,43,0.3); }
+
+  .ticket-name {
+    font-family: 'Cinzel', serif;
+    font-size: 15px; font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--white);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .ticket-seats {
+    font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 20px;
+  }
+
+  .ticket-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 5vw, 58px);
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 28px;
+  }
+  .ticket-price sup {
+    font-size: 0.45em;
+    vertical-align: super;
+    font-weight: 300;
+    opacity: 0.7;
+  }
+  .tier-general  .ticket-price { color: var(--blue); }
+  .tier-general-table .ticket-price { color: var(--green); }
+  .tier-vip      .ticket-price { color: var(--orange); }
+  .tier-vip-table .ticket-price { color: var(--red); }
+
+  .ticket-perks {
+    list-style: none;
+    flex: 1;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 20px;
+    margin-bottom: 28px;
+  }
+  .ticket-perks li {
+    font-size: 14px;
+    color: var(--text-dim);
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+  }
+  .ticket-perks li .perk-icon { flex-shrink: 0; font-size: 15px; }
+
+  .ticket-empty-perks {
+    flex: 1;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 20px;
+    margin-bottom: 28px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.18);
+    font-style: italic;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-ticket {
+    display: block;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 20px;
+    transition: all 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .btn-ticket::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.08);
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+  .btn-ticket:hover::before { transform: translateX(0); }
+  .btn-ticket:hover { transform: translateY(-2px); }
+
+  .tier-general  .btn-ticket { background: var(--blue);   color: var(--white); }
+  .tier-general-table .btn-ticket { background: var(--green);  color: var(--white); }
+  .tier-vip      .btn-ticket { background: var(--orange); color: var(--white); }
+  .tier-vip-table .btn-ticket { background: var(--red);   color: var(--white); box-shadow: 0 4px 24px rgba(204,43,43,0.3); }
+
+  /* ══════════════════ SILENT AUCTION ══════════════════ */
+  .auction-section {
+    padding: 96px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .auction-inner {
+    max-width: 1100px;
+    margin: 0 auto; padding: 0 24px;
+  }
+  .auction-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+    margin-top: 16px;
+  }
+
+  .auction-text .auction-intro {
+    font-size: 16px;
+    color: var(--text-dim);
+    line-height: 1.9;
+    margin-bottom: 32px;
+  }
+
+  .btn-auction {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: transparent;
+    border: 1px solid var(--yellow);
+    padding: 16px 40px;
+    text-decoration: none;
+    transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .btn-auction::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: var(--yellow);
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+    z-index: -1;
+  }
+  .btn-auction:hover { color: var(--black); }
+  .btn-auction:hover::before { transform: translateX(0); }
+
+  /* Auction lot placeholders */
+  .auction-lots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .auction-lot {
+    background: var(--surface);
+    padding: 28px 24px;
+    border-left: 2px solid transparent;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .auction-lot:hover { background: var(--surface2); }
+  .auction-lot:nth-child(1) { border-left-color: var(--red); }
+  .auction-lot:nth-child(2) { border-left-color: var(--green); }
+  .auction-lot:nth-child(3) { border-left-color: var(--orange); }
+  .auction-lot:nth-child(4) { border-left-color: var(--blue); }
+  .auction-lot:nth-child(5) { border-left-color: var(--yellow); }
+  .auction-lot:nth-child(6) { border-left-color: var(--red); }
+
+  .lot-label {
+    font-size: 9px; letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 10px; display: block;
+  }
+  .lot-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px; font-weight: 400;
+    color: var(--white);
+    line-height: 1.3;
+  }
+  .lot-placeholder {
+    font-size: 13px;
+    color: rgba(255,255,255,0.2);
+    font-style: italic;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 768px) {
+    .auction-layout { grid-template-columns: 1fr; gap: 40px; }
+    .auction-lots   { grid-template-columns: 1fr; }
+  }
+
+  /* ══════════════════ SPONSORS ══════════════════ */
+  .sponsors-section {
+    background: var(--surface);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 96px 0;
+  }
+  .sponsors-inner {
+    max-width: 1100px;
+    margin: 0 auto; padding: 0 24px;
+  }
+
+  /* Lace tiers */
+  .lace-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 16px;
+    margin-bottom: 52px;
+  }
+
+  .lace-tier {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: var(--surface2);
+    overflow: hidden;
+    transition: transform 0.3s;
+    cursor: default;
+  }
+  .lace-tier:hover { transform: translateX(6px); }
+
+  .lace-color-bar {
+    width: 6px;
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+  .lace-tier.red    .lace-color-bar { background: var(--red); }
+  .lace-tier.green  .lace-color-bar { background: var(--green); }
+  .lace-tier.orange .lace-color-bar { background: var(--orange); }
+  .lace-tier.yellow .lace-color-bar { background: var(--yellow); }
+  .lace-tier.blue   .lace-color-bar { background: var(--blue); }
+
+  .lace-tier-body {
+    flex: 1;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .lace-tier-name {
+    font-family: 'Cinzel', serif;
+    font-size: 14px; font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .lace-tier.red    .lace-tier-name { color: var(--red); }
+  .lace-tier.green  .lace-tier-name { color: var(--green); }
+  .lace-tier.orange .lace-tier-name { color: var(--orange); }
+  .lace-tier.yellow .lace-tier-name { color: var(--yellow); }
+  .lace-tier.blue   .lace-tier-name { color: var(--blue); }
+
+  .lace-tier-desc {
+    font-size: 13px;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+    flex: 1;
+    padding: 0 24px;
+  }
+
+  .lace-sponsor-slots {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .sponsor-slot {
+    background: rgba(255,255,255,0.04);
+    border: 1px dashed rgba(255,255,255,0.12);
+    padding: 10px 20px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.2);
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  .sponsor-cta-row {
+    text-align: center;
+    margin-top: 8px;
+  }
+  .sponsor-cta-note {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-style: italic;
+    color: var(--text-dim);
+    margin-bottom: 28px;
+    display: block;
+  }
+
+  .btn-sponsor {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--yellow);
+    border: 1px solid var(--yellow);
+    padding: 18px 48px;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 4px 24px rgba(240,192,0,0.25);
+    position: relative; overflow: hidden;
+  }
+  .btn-sponsor::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.12);
+    transform: translateX(-100%);
+    transition: transform 0.35s;
+  }
+  .btn-sponsor:hover::before { transform: translateX(0); }
+  .btn-sponsor:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(240,192,0,0.4); }
+
+  /* ══════════════════ GALLERY ══════════════════ */
+  .gallery-section {
+    background: var(--surface);
+    padding: 96px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .gallery-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .gallery-header { text-align: center; margin-bottom: 56px; }
+
+  .year-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 2px; flex-wrap: wrap;
+    margin-bottom: 52px;
+  }
+  .year-tab {
+    font-family: 'Cinzel', serif;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 12px 30px;
+    cursor: pointer;
+    transition: all 0.25s;
+    line-height: 1;
+  }
+  .year-tab[data-panel="y2024"]:hover,
+  .year-tab[data-panel="y2024"].active { background: var(--orange); border-color: var(--orange); color: var(--white); }
+  .year-tab[data-panel="y2023"]:hover,
+  .year-tab[data-panel="y2023"].active { background: var(--green);  border-color: var(--green);  color: var(--white); }
+  .year-tab[data-panel="y2022"]:hover,
+  .year-tab[data-panel="y2022"].active { background: var(--red);    border-color: var(--red);    color: var(--white); }
+  .year-tab[data-panel="y2019"]:hover,
+  .year-tab[data-panel="y2019"].active { background: var(--blue);   border-color: var(--blue);   color: var(--white); }
+
+  .gallery-panel { display: none; }
+  .gallery-panel.active { display: block; }
+  .gallery-year-title { text-align: center; margin-bottom: 32px; }
+  .gallery-year-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 300; font-style: italic;
+    display: block;
+  }
+  #y2024 .gallery-year-name { color: var(--orange); }
+  #y2023 .gallery-year-name { color: var(--green); }
+  #y2022 .gallery-year-name { color: var(--red); }
+  #y2019 .gallery-year-name { color: var(--blue); }
+  .gallery-year-theme {
+    font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    display: block; margin-top: 8px;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 3px;
+  }
+  .gallery-grid.wide {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  .gallery-item {
+    position: relative;
+    aspect-ratio: 4/3; overflow: hidden;
+    background: var(--surface2);
+  }
+  .gallery-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.5s ease, filter 0.4s;
+    filter: brightness(0.82) saturate(0.85);
+  }
+  .gallery-item:hover img { transform: scale(1.06); filter: brightness(1) saturate(1.05); }
+  .gallery-item::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.45));
+    pointer-events: none;
+  }
+
+  /* ══════════════════ BOTTOM CTA ══════════════════ */
+  .cta-bottom {
+    text-align: center;
+    padding: 96px 24px;
+    position: relative;
+  }
+  .cta-bottom::before {
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 160px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--red), transparent);
+  }
+  .cta-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3vw, 40px);
+    font-weight: 300; font-style: italic;
+    color: var(--white);
+    max-width: 580px;
+    margin: 0 auto 44px;
+    line-height: 1.4;
+  }
+  .btn-primary {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--red);
+    border: 1px solid var(--red);
+    padding: 18px 48px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 32px rgba(204,43,43,0.3);
+    position: relative; overflow: hidden;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.1);
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+  }
+  .btn-primary:hover::before { transform: translateX(0); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 48px rgba(204,43,43,0.45); }
+
+  /* ══════════════════ FOOTER ══════════════════ */
+  .page-footer {
+    text-align: center;
+    padding: 40px 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-logo {
+    width: 130px;
+    filter: invert(1) brightness(1.5) contrast(0.75);
+    mix-blend-mode: screen;
+    opacity: 0.6;
+    display: block; margin: 0 auto 18px;
+  }
+  .footer-links { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
+  .footer-links a {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px; letter-spacing: 0.12em;
+    color: var(--text-dim); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--red); }
+
+  /* ══════════════════ ANIMATIONS ══════════════════ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @media (max-width: 640px) {
+    .stats-inner { grid-template-columns: 1fr; gap: 28px; }
+    .stat-item + .stat-item::before { display: none; }
+    .hero::after { inset: 16px; }
+    .hero-corner.tl { top: 16px; left: 16px; }
+    .hero-corner.tr { top: 16px; right: 16px; }
+    .hero-corner.bl { bottom: 16px; left: 16px; }
+    .hero-corner.br { bottom: 16px; right: 16px; }
+    .lace-tier-body { flex-direction: column; align-items: flex-start; }
+    .lace-tier-desc { padding: 0; }
+    .tickets-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero">
+  <div class="hero-corner tl"></div>
+  <div class="hero-corner tr"></div>
+  <div class="hero-corner bl"></div>
+  <div class="hero-corner br"></div>
+
+  <img src="https://yknotinc.org/wp-content/uploads/2025/06/Y-Knot_Logo-3.png"
+       alt="Y-KNOT Inc." class="hero-logo">
+
+  <p class="hero-badge">Y-KNOT Inc. Presents</p>
+
+  <h1 class="hero-title">
+    Laced In Legacy
+    <em>Sneaker Ball</em>
+  </h1>
+
+  <div class="hero-divider"></div>
+
+  <p class="hero-tagline">Where sneakers meet sophistication — and every step leaves a legacy.</p>
+
+  <div class="hero-date-block">
+    <p class="hero-date">6th Annual &nbsp;·&nbsp; Saturday, December 5, 2026</p>
+    <p class="hero-date">Doors Open 6:30 PM &nbsp;·&nbsp; Gala Begins 7:00 PM</p>
+    <p class="hero-venue">Venue &amp; Address &nbsp;<em>— TBD</em></p>
+  </div>
+
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+
+<!-- ════════ STATS ════════ -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-num">6</span>
+      <span class="stat-label">Years of Legacy</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">500+</span>
+      <span class="stat-label">Volunteer Hours</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">1,500+</span>
+      <span class="stat-label">Families Impacted</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════ EVENT DETAILS ════════ -->
+<div class="section">
+  <span class="section-label">A Night Unlike Any Other</span>
+  <h2 class="section-title">An evening where community, culture,<br>and legacy take center stage.</h2>
+
+  <div class="details-grid">
+    <div class="detail-card">
+      <span class="detail-icon">🗓</span>
+      <span class="detail-heading">Schedule</span>
+      <p class="detail-body">
+        <strong>6:30 PM</strong> Doors Open &amp; Welcome Reception
+        <strong>7:00 PM</strong> Gala Begins
+      </p>
+    </div>
+    <div class="detail-card">
+      <span class="detail-icon">👟</span>
+      <span class="detail-heading">Dress Code</span>
+      <p class="detail-body">
+        Black tie or formal attire paired with your favorite sneakers. Come dressed to impress — from the ankles up and the soles down.
+      </p>
+    </div>
+    <div class="detail-card">
+      <span class="detail-icon">🎓</span>
+      <span class="detail-heading">Purpose</span>
+      <p class="detail-body">
+        Your support fuels scholarships, mentorships, and community programs that keep our schools and families moving forward.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════ TICKET PRICING ════════ -->
+<section class="tickets-section">
+  <div class="tickets-inner">
+    <span class="section-label">Secure Your Seat</span>
+    <h2 class="section-title">Tickets &amp; Pricing</h2>
+
+    <div class="tickets-grid">
+
+      <!-- General Admission -->
+      <div class="ticket-card tier-general">
+        <span class="ticket-badge">General Admission</span>
+        <p class="ticket-name">Single Ticket</p>
+        <p class="ticket-price"><sup>$</sup>100</p>
+        <div class="ticket-empty-perks">Standard entry to all gala events.</div>
+        <a href="https://yknotinc.org/gala-2026-invitation-request/" class="btn-ticket">Purchase Ticket</a>
+      </div>
+
+      <!-- General Admission Table -->
+      <div class="ticket-card tier-general-table">
+        <span class="ticket-badge">General Admission</span>
+        <p class="ticket-name">Table &mdash; 8 Seats</p>
+        <p class="ticket-price"><sup>$</sup>700</p>
+        <div class="ticket-empty-perks">Reserved table for 8 guests — standard gala access.</div>
+        <a href="https://yknotinc.org/gala-2026-invitation-request/" class="btn-ticket">Purchase Ticket</a>
+      </div>
+
+      <!-- VIP Single -->
+      <div class="ticket-card tier-vip">
+        <span class="ticket-badge">VIP</span>
+        <p class="ticket-name">VIP Ticket</p>
+        <p class="ticket-price"><sup>$</sup>120</p>
+        <ul class="ticket-perks">
+          <li><span class="perk-icon">🍷</span> Glass of wine upon arrival</li>
+          <li><span class="perk-icon">🧀</span> Charcuterie board for the table</li>
+          <li><span class="perk-icon">⏰</span> Early access to the venue</li>
+          <li><span class="perk-icon">🍽️</span> Passed appetizers throughout the evening</li>
+        </ul>
+        <a href="https://yknotinc.org/gala-2026-invitation-request/" class="btn-ticket">Purchase Ticket</a>
+      </div>
+
+      <!-- VIP Table -->
+      <div class="ticket-card tier-vip-table">
+        <span class="ticket-badge">VIP Table</span>
+        <p class="ticket-name">VIP Table &mdash; 8 Seats</p>
+        <p class="ticket-price"><sup>$</sup>860</p>
+        <ul class="ticket-perks">
+          <li><span class="perk-icon">🍷</span> Glass of wine upon arrival</li>
+          <li><span class="perk-icon">🧀</span> Charcuterie board for the table</li>
+          <li><span class="perk-icon">⏰</span> Early access to the venue</li>
+          <li><span class="perk-icon">🍽️</span> Passed appetizers throughout the evening</li>
+        </ul>
+        <a href="https://yknotinc.org/gala-2026-invitation-request/" class="btn-ticket">Purchase Ticket</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ SILENT AUCTION ════════ -->
+<section class="auction-section">
+  <div class="auction-inner">
+    <div class="auction-layout">
+      <div class="auction-text">
+        <span class="section-label">Silent Auction</span>
+        <h2 class="section-title" style="margin-bottom:20px;">Bid on Something Extraordinary</h2>
+        <p class="auction-intro">
+          Our silent auction features curated experiences, exclusive packages, and one-of-a-kind items — all benefiting scholarships and mentorship programs for the youth we serve. Every bid is a step toward a brighter future.
+        </p>
+        <p class="auction-intro" style="margin-bottom:36px;">
+          Auction items will be announced closer to the event. Stay tuned — you won't want to miss what's on the table.
+        </p>
+        <a href="https://yknotinc.org/gala-2026-invitation-request/" class="btn-auction">Join the Silent Auction</a>
+      </div>
+
+      <div>
+        <div class="auction-lots">
+          <div class="auction-lot">
+            <span class="lot-label">Lot 01</span>
+            <p class="lot-placeholder lot-name">Coming Soon</p>
+          </div>
+          <div class="auction-lot">
+            <span class="lot-label">Lot 02</span>
+            <p class="lot-placeholder lot-name">Coming Soon</p>
+          </div>
+          <div class="auction-lot">
+            <span class="lot-label">Lot 03</span>
+            <p class="lot-placeholder lot-name">Coming Soon</p>
+          </div>
+          <div class="auction-lot">
+            <span class="lot-label">Lot 04</span>
+            <p class="lot-placeholder lot-name">Coming Soon</p>
+          </div>
+          <div class="auction-lot">
+            <span class="lot-label">Lot 05</span>
+            <p class="lot-placeholder lot-name">Coming Soon</p>
+          </div>
+          <div class="auction-lot">
+            <span class="lot-label">Lot 06</span>
+            <p class="lot-placeholder lot-name">Coming Soon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ SPONSORS ════════ -->
+<section class="sponsors-section">
+  <div class="sponsors-inner">
+    <span class="section-label">Partnership Opportunities</span>
+    <h2 class="section-title">Become a Sponsor</h2>
+
+    <div class="lace-tiers">
+
+      <div class="lace-tier red">
+        <div class="lace-color-bar"></div>
+        <div class="lace-tier-body">
+          <span class="lace-tier-name">Red Lace</span>
+          <span class="lace-tier-desc">Premier presenting sponsor — maximum visibility and recognition</span>
+          <div class="lace-sponsor-slots">
+            <div class="sponsor-slot">Your Logo Here</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lace-tier green">
+        <div class="lace-color-bar"></div>
+        <div class="lace-tier-body">
+          <span class="lace-tier-name">Green Lace</span>
+          <span class="lace-tier-desc">Gold-level sponsor — prominent placement and recognition</span>
+          <div class="lace-sponsor-slots">
+            <div class="sponsor-slot">Your Logo Here</div>
+            <div class="sponsor-slot">Your Logo Here</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lace-tier orange">
+        <div class="lace-color-bar"></div>
+        <div class="lace-tier-body">
+          <span class="lace-tier-name">Orange Lace</span>
+          <span class="lace-tier-desc">Silver-level sponsor — featured in event materials</span>
+          <div class="lace-sponsor-slots">
+            <div class="sponsor-slot">Your Logo Here</div>
+            <div class="sponsor-slot">Your Logo Here</div>
+            <div class="sponsor-slot">Your Logo Here</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lace-tier yellow">
+        <div class="lace-color-bar"></div>
+        <div class="lace-tier-body">
+          <span class="lace-tier-name">Yellow Lace</span>
+          <span class="lace-tier-desc">Bronze-level sponsor — recognized in the program</span>
+          <div class="lace-sponsor-slots">
+            <div class="sponsor-slot">Your Logo Here</div>
+            <div class="sponsor-slot">Your Logo Here</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lace-tier blue">
+        <div class="lace-color-bar"></div>
+        <div class="lace-tier-body">
+          <span class="lace-tier-name">Blue Lace</span>
+          <span class="lace-tier-desc">Community sponsor — acknowledged in digital materials</span>
+          <div class="lace-sponsor-slots">
+            <div class="sponsor-slot">Your Logo Here</div>
+            <div class="sponsor-slot">Your Logo Here</div>
+            <div class="sponsor-slot">Your Logo Here</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="sponsor-cta-row">
+      <span class="sponsor-cta-note">Interested in partnering with us? Download our full sponsorship deck for details on all tiers and benefits.</span>
+      <a href="#" class="btn-sponsor">Request the Sponsorship Deck</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ GALLERY ════════ -->
+<section class="gallery-section">
+  <div class="gallery-inner">
+    <div class="gallery-header">
+      <span class="section-label" style="text-align:center; display:block;">Through the Years</span>
+      <h2 class="section-title" style="text-align:center; margin-bottom:16px;">Gala Gallery</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="year-tabs" role="tablist">
+      <button class="year-tab active" data-panel="y2024" role="tab" aria-selected="true">2024</button>
+      <button class="year-tab" data-panel="y2023" role="tab" aria-selected="false">2023</button>
+      <button class="year-tab" data-panel="y2022" role="tab" aria-selected="false">2022</button>
+      <button class="year-tab" data-panel="y2019" role="tab" aria-selected="false">2019</button>
+    </div>
+
+    <div class="gallery-panel active" id="y2024" role="tabpanel">
+      <div class="gallery-year-title">
+        <span class="gallery-year-name">A Night of Elegance in Orange</span>
+        <span class="gallery-year-theme">5th Annual · 2024</span>
+      </div>
+      <div class="gallery-grid wide">
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-1.png" alt="2024 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-2.png" alt="2024 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-3.png" alt="2024 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-4.png" alt="2024 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-5.png" alt="2024 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-6.png" alt="2024 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-7.png" alt="2024 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-8.png" alt="2024 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-9.png" alt="2024 Gala"></div>
+      </div>
+    </div>
+
+    <div class="gallery-panel" id="y2023" role="tabpanel">
+      <div class="gallery-year-title">
+        <span class="gallery-year-name">You Have to Be Seen Green</span>
+        <span class="gallery-year-theme">4th Annual · 2023 · Growing, Resilient, Effective, Evolving &amp; Noble</span>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2023-Green-Gala-1.png" alt="2023 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2023-Green-Gala-2.png" alt="2023 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2023-Green-Gala-3.png" alt="2023 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2023-Green-Gala-4.png" alt="2023 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2023-Green-Gala-5.png" alt="2023 Gala"></div>
+      </div>
+    </div>
+
+    <div class="gallery-panel" id="y2022" role="tabpanel">
+      <div class="gallery-year-title">
+        <span class="gallery-year-name">Intentionally InspiRED</span>
+        <span class="gallery-year-theme">3rd Annual · 2022</span>
+      </div>
+      <div class="gallery-grid wide">
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2022-Red-Gala-1.png" alt="2022 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2022-Red-Gala-2.png" alt="2022 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2022-Red-Gala-3.png" alt="2022 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2022-Red-Gala-4.png" alt="2022 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2022-Red-Gala-5.png" alt="2022 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2022-Red-Gala-6.png" alt="2022 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2022-Red-Gala-7.png" alt="2022 Gala"></div>
+      </div>
+    </div>
+
+    <div class="gallery-panel" id="y2019" role="tabpanel">
+      <div class="gallery-year-title">
+        <span class="gallery-year-name">It Is a Family Affair</span>
+        <span class="gallery-year-theme">1st Annual · 2019 · Black &amp; White Gala</span>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2019-Black-White-Gala-1.png" alt="2019 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2019-Black-White-Gala-2.png" alt="2019 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2019-Black-White-Gala-3.png" alt="2019 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2019-Black-White-Gala-4.png" alt="2019 Gala"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ SINGLE CTA ════════ -->
+<div class="cta-bottom">
+  <p class="cta-tagline">
+    "Every step you take toward this evening is a step toward lifting our community."
+  </p>
+  <a href="https://yknotinc.org/gala-2026-invitation-request/" class="btn-primary">
+    Get on the Guest List
+  </a>
+</div>
+
+
+<!-- ════════ FOOTER ════════ -->
+<div class="page-footer">
+  <img src="https://yknotinc.org/wp-content/uploads/2025/06/Y-Knot_Logo-3.png"
+       alt="Y-KNOT Inc." class="footer-logo">
+  <div class="footer-links">
+    <a href="https://yknotinc.org">yknotinc.org</a>
+    <a href="mailto:info@yknotinc.org">info@yknotinc.org</a>
+    <a href="tel:3018399668">301-839-YNOT</a>
+  </div>
+</div>
+
+
+<script>
+  // Gallery tabs
+  document.querySelectorAll('.year-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.year-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+      document.querySelectorAll('.gallery-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+      document.getElementById(tab.dataset.panel).classList.add('active');
+    });
+  });
+
+  // Scroll fade-in
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.detail-card, .stat-item, .ticket-card, .lace-tier, .auction-lot').forEach(el => {
+    el.style.opacity='0'; el.style.transform='translateY(20px)';
+    el.style.transition='opacity 0.65s ease, transform 0.65s ease';
+    io.observe(el);
+  });
+</script>
+</body>
+</html>

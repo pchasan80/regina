@@ -8,17 +8,34 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --red: #CC2B2B;
+      --red-light: #E84040;
+      --red-dim: #8C1A1A;
+      --green: #3A9A3C;
+      --blue: #2A6DB5;
+      --orange: #E87820;
+      --yellow: #F0C000;
+      --black: #090909;
+      --surface: #141414;
+      --surface2: #1C1C1C;
+      --surface3: #242424;
+      --text: #EEE8E0;
+      --text-dim: #888070;
+      --white: #FAFAF5;
+    }
+
     body {
       font-family: 'DM Sans', sans-serif;
-      background: #0f1f06;
-      color: #f0ece2;
+      background: var(--black);
+      color: var(--text);
       min-height: 100vh;
     }
 
     /* ── NAV ── */
     .nav {
-      background: rgba(15, 31, 6, 0.95);
-      border-bottom: 1px solid rgba(126, 200, 50, 0.2);
+      background: rgba(20, 20, 20, 0.95);
+      border-bottom: 1px solid rgba(204, 43, 43, 0.25);
       padding: 14px 32px;
       display: flex;
       align-items: center;
@@ -32,24 +49,24 @@
       font-family: 'Playfair Display', serif;
       font-size: 20px;
       font-weight: 700;
-      color: #7ec832;
+      color: var(--red);
       text-decoration: none;
     }
-    .nav-logo span { color: #f0ece2; }
+    .nav-logo span { color: var(--text); }
     .nav-back {
       font-size: 13px;
-      color: #a8c478;
+      color: var(--text-dim);
       text-decoration: none;
-      border: 1px solid rgba(168, 196, 120, 0.3);
+      border: 1px solid rgba(136, 128, 112, 0.35);
       padding: 6px 14px;
       border-radius: 20px;
       transition: all 0.2s;
     }
-    .nav-back:hover { background: rgba(168, 196, 120, 0.1); color: #c8e89a; }
+    .nav-back:hover { background: rgba(204, 43, 43, 0.12); color: var(--white); }
 
     /* ── HERO ── */
     .hero {
-      background: linear-gradient(160deg, #1a2e0d 0%, #0f1f06 60%, #1a1a06 100%);
+      background: linear-gradient(160deg, var(--surface2) 0%, var(--black) 60%, var(--surface3) 100%);
       padding: 60px 24px 50px;
       text-align: center;
       position: relative;
@@ -59,21 +76,21 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(126,200,50,0.12) 0%, transparent 65%);
+      background: radial-gradient(ellipse at 50% 0%, rgba(204, 43, 43, 0.18) 0%, transparent 65%);
       pointer-events: none;
     }
     .eyebrow {
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 4px;
-      color: #e8a030;
+      color: var(--orange);
       text-transform: uppercase;
       margin-bottom: 14px;
     }
     .badge {
       display: inline-block;
-      background: #e8a030;
-      color: #1a1a0a;
+      background: var(--yellow);
+      color: var(--black);
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 2px;
@@ -84,21 +101,21 @@
       animation: pulse 2s ease-in-out infinite;
     }
     @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(232, 160, 48, 0.4); }
-      50% { box-shadow: 0 0 0 8px rgba(232, 160, 48, 0); }
+      0%, 100% { box-shadow: 0 0 0 0 rgba(240, 192, 0, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(240, 192, 0, 0); }
     }
     .hero-title {
       font-family: 'Playfair Display', serif;
       font-size: clamp(44px, 8vw, 72px);
       font-weight: 900;
-      color: #f0ece2;
+      color: var(--text);
       line-height: 1.05;
       margin-bottom: 10px;
     }
-    .hero-title .accent { color: #7ec832; }
+    .hero-title .accent { color: var(--red); }
     .hero-subtitle {
       font-size: 16px;
-      color: #a8c478;
+      color: var(--text-dim);
       margin-bottom: 32px;
       letter-spacing: 0.3px;
     }
@@ -112,8 +129,8 @@
       flex-wrap: wrap;
     }
     .cd-box {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(250, 250, 245, 0.06);
+      border: 1px solid rgba(250, 250, 245, 0.12);
       border-radius: 10px;
       padding: 14px 18px;
       min-width: 64px;
@@ -123,13 +140,13 @@
       font-family: 'Playfair Display', serif;
       font-size: 34px;
       font-weight: 700;
-      color: #f0ece2;
+      color: var(--text);
       line-height: 1;
       display: block;
     }
     .cd-lbl {
       font-size: 10px;
-      color: #a8c478;
+      color: var(--text-dim);
       text-transform: uppercase;
       letter-spacing: 1.5px;
       margin-top: 4px;
@@ -138,7 +155,7 @@
     .cd-separator {
       font-family: 'Playfair Display', serif;
       font-size: 28px;
-      color: rgba(168,196,120,0.4);
+      color: rgba(136, 128, 112, 0.5);
       align-self: center;
       margin-top: -8px;
     }
@@ -146,8 +163,8 @@
     /* ── CTA BUTTONS ── */
     .btn-primary {
       display: inline-block;
-      background: #7ec832;
-      color: #0d1a04;
+      background: var(--red);
+      color: var(--white);
       font-family: 'DM Sans', sans-serif;
       font-size: 16px;
       font-weight: 700;
@@ -159,17 +176,17 @@
       letter-spacing: 0.3px;
       transition: background 0.2s, transform 0.15s;
     }
-    .btn-primary:hover { background: #8fd83e; transform: translateY(-1px); }
+    .btn-primary:hover { background: var(--red-light); transform: translateY(-1px); }
     .btn-primary:active { transform: translateY(0); }
     .hero-note {
       font-size: 12px;
-      color: #7a9e54;
+      color: var(--text-dim);
       margin-top: 12px;
     }
 
     /* ── DETAIL BAR ── */
     .detail-bar {
-      background: #e8a030;
+      background: var(--orange);
       padding: 14px 24px;
       display: flex;
       justify-content: center;
@@ -179,7 +196,7 @@
     .detail-item {
       font-size: 13px;
       font-weight: 600;
-      color: #1a1a0a;
+      color: var(--black);
       display: flex;
       align-items: center;
       gap: 7px;
@@ -203,21 +220,21 @@
       font-weight: 600;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: #7ec832;
+      color: var(--red);
       margin-bottom: 8px;
     }
     .section-title {
       font-family: 'Playfair Display', serif;
       font-size: 28px;
       font-weight: 700;
-      color: #f0ece2;
+      color: var(--text);
       margin-bottom: 20px;
     }
 
     /* ── MISSION STRIP ── */
     .mission-strip {
-      background: rgba(126, 200, 50, 0.08);
-      border: 1px solid rgba(126, 200, 50, 0.2);
+      background: rgba(58, 154, 60, 0.1);
+      border: 1px solid rgba(58, 154, 60, 0.35);
       border-radius: 10px;
       padding: 20px 24px;
       margin-bottom: 40px;
@@ -228,15 +245,15 @@
     .mission-icon {
       width: 40px;
       height: 40px;
-      background: rgba(126,200,50,0.15);
+      background: rgba(58, 154, 60, 0.2);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
-    .mission-text { font-size: 14px; color: #a8c478; line-height: 1.6; }
-    .mission-text strong { color: #c8e89a; font-weight: 600; }
+    .mission-text { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
+    .mission-text strong { color: var(--white); font-weight: 600; }
 
     /* ── PERKS ── */
     .perks-grid {
@@ -246,31 +263,31 @@
       margin-bottom: 48px;
     }
     .perk-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-left: 3px solid #7ec832;
+      background: rgba(250, 250, 245, 0.05);
+      border: 1px solid rgba(250, 250, 245, 0.1);
+      border-left: 3px solid var(--red);
       border-radius: 0 8px 8px 0;
       padding: 14px 16px;
     }
     .perk-title {
       font-size: 14px;
       font-weight: 600;
-      color: #c8e89a;
+      color: var(--white);
       margin-bottom: 3px;
     }
-    .perk-desc { font-size: 12px; color: #7a9e54; line-height: 1.5; }
+    .perk-desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
 
     /* ── DIVIDER ── */
     .divider {
       border: none;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      border-top: 1px solid rgba(250, 250, 245, 0.08);
       margin: 40px 0;
     }
 
     /* ── PRICING ── */
     .price-box {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(126,200,50,0.25);
+      background: rgba(250, 250, 245, 0.05);
+      border: 1px solid rgba(204, 43, 43, 0.35);
       border-radius: 12px;
       padding: 28px 32px;
       display: flex;
@@ -285,32 +302,32 @@
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #7a9e54;
+      color: var(--text-dim);
       margin-bottom: 4px;
     }
     .price-amount {
       font-family: 'Playfair Display', serif;
       font-size: 48px;
       font-weight: 700;
-      color: #f0ece2;
+      color: var(--text);
       line-height: 1;
     }
     .price-compare {
       font-size: 16px;
-      color: rgba(255,255,255,0.3);
+      color: rgba(250, 250, 245, 0.35);
       text-decoration: line-through;
       margin-left: 8px;
     }
     .price-save {
       font-size: 13px;
-      color: #7ec832;
+      color: var(--green);
       font-weight: 500;
       margin-top: 6px;
     }
     .btn-buy {
       display: inline-block;
-      background: #7ec832;
-      color: #0d1a04;
+      background: var(--red);
+      color: var(--white);
       font-family: 'DM Sans', sans-serif;
       font-size: 15px;
       font-weight: 700;
@@ -322,42 +339,42 @@
       transition: background 0.2s, transform 0.15s;
       white-space: nowrap;
     }
-    .btn-buy:hover { background: #8fd83e; transform: translateY(-1px); }
+    .btn-buy:hover { background: var(--red-light); transform: translateY(-1px); }
     .deadline-note {
       font-size: 12px;
-      color: #7a9e54;
+      color: var(--text-dim);
       text-align: center;
       margin-bottom: 40px;
     }
-    .deadline-note span { color: #e8a030; font-weight: 600; }
+    .deadline-note span { color: var(--yellow); font-weight: 600; }
 
     /* ── EVENTBRITE EMBED ── */
     .embed-section { margin-bottom: 48px; }
     .embed-placeholder {
-      background: rgba(255,255,255,0.03);
-      border: 2px dashed rgba(126,200,50,0.2);
+      background: rgba(250, 250, 245, 0.03);
+      border: 2px dashed rgba(42, 109, 181, 0.35);
       border-radius: 10px;
       padding: 32px;
       text-align: center;
       font-size: 13px;
-      color: #7a9e54;
+      color: var(--text-dim);
       line-height: 1.7;
     }
     .embed-placeholder code {
       display: block;
-      background: rgba(0,0,0,0.3);
+      background: rgba(9, 9, 9, 0.6);
       border-radius: 6px;
       padding: 10px 16px;
       margin-top: 12px;
       font-size: 12px;
-      color: #7ec832;
+      color: var(--green);
       text-align: left;
     }
 
     /* ── FOOTER ── */
     .footer {
-      background: #070f03;
-      border-top: 1px solid rgba(126,200,50,0.1);
+      background: var(--surface);
+      border-top: 1px solid rgba(204, 43, 43, 0.2);
       padding: 28px 24px;
       text-align: center;
     }
@@ -365,14 +382,14 @@
       font-family: 'Playfair Display', serif;
       font-size: 18px;
       font-weight: 700;
-      color: #7ec832;
+      color: var(--red);
       margin-bottom: 8px;
     }
-    .footer-logo span { color: #f0ece2; }
-    .footer-tagline { font-size: 12px; color: #7a9e54; margin-bottom: 14px; }
+    .footer-logo span { color: var(--text); }
+    .footer-tagline { font-size: 12px; color: var(--text-dim); margin-bottom: 14px; }
     .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    .footer-links a { font-size: 12px; color: #7a9e54; text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: #a8c478; }
+    .footer-links a { font-size: 12px; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 560px) {
@@ -428,30 +445,30 @@
   <div class="detail-bar">
     <div class="detail-item">
       <svg class="detail-icon" viewBox="0 0 16 16" fill="none">
-        <rect x="1" y="2" width="14" height="13" rx="2" stroke="#1a1a0a" stroke-width="1.5"/>
-        <path d="M1 6h14" stroke="#1a1a0a" stroke-width="1.5"/>
-        <path d="M5 1v2M11 1v2" stroke="#1a1a0a" stroke-width="1.5" stroke-linecap="round"/>
+        <rect x="1" y="2" width="14" height="13" rx="2" stroke="#090909" stroke-width="1.5"/>
+        <path d="M1 6h14" stroke="#090909" stroke-width="1.5"/>
+        <path d="M5 1v2M11 1v2" stroke="#090909" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
       Saturday, August 2, 2025
     </div>
     <div class="detail-item">
       <svg class="detail-icon" viewBox="0 0 16 16" fill="none">
-        <path d="M8 1C5.8 1 4 2.8 4 5c0 3.5 4 9 4 9s4-5.5 4-9c0-2.2-1.8-4-4-4z" stroke="#1a1a0a" stroke-width="1.5"/>
-        <circle cx="8" cy="5" r="1.5" stroke="#1a1a0a" stroke-width="1.5"/>
+        <path d="M8 1C5.8 1 4 2.8 4 5c0 3.5 4 9 4 9s4-5.5 4-9c0-2.2-1.8-4-4-4z" stroke="#090909" stroke-width="1.5"/>
+        <circle cx="8" cy="5" r="1.5" stroke="#090909" stroke-width="1.5"/>
       </svg>
       Oxon Hill, MD
     </div>
     <div class="detail-item">
       <svg class="detail-icon" viewBox="0 0 16 16" fill="none">
-        <path d="M2 9c2-2 5-2 7 0s5 2 7 0" stroke="#1a1a0a" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M1 7l2 4h10l2-4" stroke="#1a1a0a" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M2 9c2-2 5-2 7 0s5 2 7 0" stroke="#090909" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M1 7l2 4h10l2-4" stroke="#090909" stroke-width="1.5" stroke-linejoin="round"/>
       </svg>
       Sneaker Chic Attire
     </div>
     <div class="detail-item">
       <svg class="detail-icon" viewBox="0 0 16 16" fill="none">
-        <circle cx="8" cy="8" r="6" stroke="#1a1a0a" stroke-width="1.5"/>
-        <path d="M8 4v4l3 2" stroke="#1a1a0a" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="8" cy="8" r="6" stroke="#090909" stroke-width="1.5"/>
+        <path d="M8 4v4l3 2" stroke="#090909" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
       6:00 PM – 11:00 PM
     </div>
@@ -464,7 +481,7 @@
     <div class="mission-strip">
       <div class="mission-icon">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <path d="M10 2L3 7v6c0 3.3 3 6 7 6s7-2.7 7-6V7L10 2z" stroke="#7ec832" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M10 2L3 7v6c0 3.3 3 6 7 6s7-2.7 7-6V7L10 2z" stroke="#3A9A3C" stroke-width="1.5" stroke-linejoin="round"/>
         </svg>
       </div>
       <p class="mission-text">

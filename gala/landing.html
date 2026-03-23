@@ -32,38 +32,6 @@
       min-height: 100vh;
     }
 
-    /* ── NAV ── */
-    .nav {
-      background: rgba(20, 20, 20, 0.95);
-      border-bottom: 1px solid rgba(204, 43, 43, 0.25);
-      padding: 14px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(8px);
-    }
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--red);
-      text-decoration: none;
-    }
-    .nav-logo span { color: var(--text); }
-    .nav-back {
-      font-size: 13px;
-      color: var(--text-dim);
-      text-decoration: none;
-      border: 1px solid rgba(136, 128, 112, 0.35);
-      padding: 6px 14px;
-      border-radius: 20px;
-      transition: all 0.2s;
-    }
-    .nav-back:hover { background: rgba(204, 43, 43, 0.12); color: var(--white); }
-
     /* ── HERO ── */
     .hero {
       background: linear-gradient(160deg, var(--surface2) 0%, var(--black) 60%, var(--surface3) 100%);
@@ -402,14 +370,9 @@
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <a href="https://yknotinc.org" class="nav-logo">Y-KNOT<span> Inc.</span></a>
-    <a href="https://yknotinc.org/sneaker-ball" class="nav-back">← View Full Gala Page</a>
-  </nav>
-
   <!-- HERO -->
   <section class="hero">
+    <img src="https://yknotinc.org/wp-content/uploads/2025/06/Y-Knot_Logo-2.png" alt="Y-KNOT Inc. Logo" style="width: 300px; margin-bottom: 20px;" />
     <div class="eyebrow">Y-KNOT Inc. Presents</div>
     <div class="badge">🎟 Early Bird Special</div>
     <h1 class="hero-title">The Sneaker <span class="accent">Ball</span></h1>

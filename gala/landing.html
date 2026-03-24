@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sneaker Ball — Early Bird Tickets | Y-KNOT Inc.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<div class="yknot-landing">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap');
 
-    :root {
+    .yknot-landing, .yknot-landing * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    .yknot-landing {
       --red: #CC2B2B;
       --red-light: #E84040;
       --red-dim: #8C1A1A;
@@ -25,7 +21,7 @@
       --white: #FAFAF5;
     }
 
-    body {
+    .yknot-landing {
       font-family: 'DM Sans', sans-serif;
       background: var(--black);
       color: var(--text);
@@ -33,21 +29,26 @@
     }
 
     /* ── HERO ── */
-    .hero {
+    .yknot-landing .hero {
       background: linear-gradient(160deg, var(--surface2) 0%, var(--black) 60%, var(--surface3) 100%);
       padding: 60px 24px 50px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
-    .hero::before {
+    .yknot-landing .hero::before {
       content: '';
       position: absolute;
       inset: 0;
       background: radial-gradient(ellipse at 50% 0%, rgba(204, 43, 43, 0.18) 0%, transparent 65%);
       pointer-events: none;
     }
-    .eyebrow {
+    .yknot-landing .hero-logo {
+      display: block;
+      margin: 0 auto 20px;
+      width: 300px;
+    }
+    .yknot-landing .eyebrow {
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 4px;
@@ -55,7 +56,7 @@
       text-transform: uppercase;
       margin-bottom: 14px;
     }
-    .badge {
+    .yknot-landing .badge {
       display: inline-block;
       background: var(--yellow);
       color: var(--black);
@@ -72,7 +73,7 @@
       0%, 100% { box-shadow: 0 0 0 0 rgba(240, 192, 0, 0.4); }
       50% { box-shadow: 0 0 0 8px rgba(240, 192, 0, 0); }
     }
-    .hero-title {
+    .yknot-landing .hero-title {
       font-family: 'Playfair Display', serif;
       font-size: clamp(44px, 8vw, 72px);
       font-weight: 900;
@@ -80,8 +81,8 @@
       line-height: 1.05;
       margin-bottom: 10px;
     }
-    .hero-title .accent { color: var(--red); }
-    .hero-subtitle {
+    .yknot-landing .hero-title .accent { color: var(--red); }
+    .yknot-landing .hero-subtitle {
       font-size: 16px;
       color: var(--text-dim);
       margin-bottom: 32px;
@@ -89,14 +90,14 @@
     }
 
     /* ── COUNTDOWN ── */
-    .countdown {
+    .yknot-landing .countdown {
       display: flex;
       justify-content: center;
       gap: 12px;
       margin-bottom: 32px;
       flex-wrap: wrap;
     }
-    .cd-box {
+    .yknot-landing .cd-box {
       background: rgba(250, 250, 245, 0.06);
       border: 1px solid rgba(250, 250, 245, 0.12);
       border-radius: 10px;
@@ -104,7 +105,7 @@
       min-width: 85px;
       text-align: center;
     }
-    .cd-num {
+    .yknot-landing .cd-num {
       font-family: 'DM Sans', sans-serif;
       font-size: 34px;
       font-weight: 700;
@@ -112,7 +113,7 @@
       line-height: 1;
       display: block;
     }
-    .cd-lbl {
+    .yknot-landing .cd-lbl {
       font-size: 10px;
       color: var(--text-dim);
       text-transform: uppercase;
@@ -120,7 +121,7 @@
       margin-top: 4px;
       display: block;
     }
-    .cd-separator {
+    .yknot-landing .cd-separator {
       font-family: 'Playfair Display', serif;
       font-size: 28px;
       color: rgba(136, 128, 112, 0.5);
@@ -129,7 +130,7 @@
     }
 
     /* ── CTA BUTTONS ── */
-    .btn-primary {
+    .yknot-landing .btn-primary {
       display: inline-block;
       background: var(--red);
       color: var(--white);
@@ -144,16 +145,16 @@
       letter-spacing: 0.3px;
       transition: background 0.2s, transform 0.15s;
     }
-    .btn-primary:hover { background: var(--red-light); transform: translateY(-1px); }
-    .btn-primary:active { transform: translateY(0); }
-    .hero-note {
+    .yknot-landing .btn-primary:hover { background: var(--red-light); transform: translateY(-1px); }
+    .yknot-landing .btn-primary:active { transform: translateY(0); }
+    .yknot-landing .hero-note {
       font-size: 12px;
       color: var(--text-dim);
       margin-top: 12px;
     }
 
     /* ── DETAIL BAR ── */
-    .detail-bar {
+    .yknot-landing .detail-bar {
       background: var(--orange);
       padding: 14px 24px;
       display: flex;
@@ -161,7 +162,7 @@
       gap: 32px;
       flex-wrap: wrap;
     }
-    .detail-item {
+    .yknot-landing .detail-item {
       font-size: 13px;
       font-weight: 600;
       color: var(--black);
@@ -169,21 +170,21 @@
       align-items: center;
       gap: 7px;
     }
-    .detail-icon {
+    .yknot-landing .detail-icon {
       width: 16px;
       height: 16px;
       flex-shrink: 0;
     }
 
     /* ── BODY ── */
-    .page-body {
+    .yknot-landing .page-body {
       max-width: 760px;
       margin: 0 auto;
       padding: 48px 24px 64px;
     }
 
     /* ── SECTION HEADER ── */
-    .section-label {
+    .yknot-landing .section-label {
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 3px;
@@ -191,7 +192,7 @@
       color: var(--red);
       margin-bottom: 8px;
     }
-    .section-title {
+    .yknot-landing .section-title {
       font-family: 'Playfair Display', serif;
       font-size: 28px;
       font-weight: 700;
@@ -200,7 +201,7 @@
     }
 
     /* ── MISSION STRIP ── */
-    .mission-strip {
+    .yknot-landing .mission-strip {
       background: rgba(58, 154, 60, 0.1);
       border: 1px solid rgba(58, 154, 60, 0.35);
       border-radius: 10px;
@@ -210,7 +211,7 @@
       align-items: center;
       gap: 16px;
     }
-    .mission-icon {
+    .yknot-landing .mission-icon {
       width: 40px;
       height: 40px;
       background: rgba(58, 154, 60, 0.2);
@@ -220,40 +221,40 @@
       justify-content: center;
       flex-shrink: 0;
     }
-    .mission-text { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
-    .mission-text strong { color: var(--white); font-weight: 600; }
+    .yknot-landing .mission-text { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
+    .yknot-landing .mission-text strong { color: var(--white); font-weight: 600; }
 
     /* ── PERKS ── */
-    .perks-grid {
+    .yknot-landing .perks-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 12px;
       margin-bottom: 48px;
     }
-    .perk-card {
+    .yknot-landing .perk-card {
       background: rgba(250, 250, 245, 0.05);
       border: 1px solid rgba(250, 250, 245, 0.1);
       border-left: 3px solid var(--red);
       border-radius: 0 8px 8px 0;
       padding: 14px 16px;
     }
-    .perk-title {
+    .yknot-landing .perk-title {
       font-size: 14px;
       font-weight: 600;
       color: var(--white);
       margin-bottom: 3px;
     }
-    .perk-desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+    .yknot-landing .perk-desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
 
     /* ── DIVIDER ── */
-    .divider {
+    .yknot-landing .divider {
       border: none;
       border-top: 1px solid rgba(250, 250, 245, 0.08);
       margin: 40px 0;
     }
 
     /* ── PRICING ── */
-    .price-box {
+    .yknot-landing .price-box {
       background: rgba(250, 250, 245, 0.05);
       border: 1px solid rgba(204, 43, 43, 0.35);
       border-radius: 12px;
@@ -265,7 +266,7 @@
       flex-wrap: wrap;
       margin-bottom: 12px;
     }
-    .price-tier {
+    .yknot-landing .price-tier {
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 2px;
@@ -273,26 +274,26 @@
       color: var(--text-dim);
       margin-bottom: 4px;
     }
-    .price-amount {
+    .yknot-landing .price-amount {
       font-family: 'Playfair Display', serif;
       font-size: 48px;
       font-weight: 700;
       color: var(--text);
       line-height: 1;
     }
-    .price-compare {
+    .yknot-landing .price-compare {
       font-size: 16px;
       color: rgba(250, 250, 245, 0.35);
       text-decoration: line-through;
       margin-left: 8px;
     }
-    .price-save {
+    .yknot-landing .price-save {
       font-size: 13px;
       color: var(--green);
       font-weight: 500;
       margin-top: 6px;
     }
-    .btn-buy {
+    .yknot-landing .btn-buy {
       display: inline-block;
       background: var(--red);
       color: var(--white);
@@ -307,18 +308,18 @@
       transition: background 0.2s, transform 0.15s;
       white-space: nowrap;
     }
-    .btn-buy:hover { background: var(--red-light); transform: translateY(-1px); }
-    .deadline-note {
+    .yknot-landing .btn-buy:hover { background: var(--red-light); transform: translateY(-1px); }
+    .yknot-landing .deadline-note {
       font-size: 12px;
       color: var(--text-dim);
       text-align: center;
       margin-bottom: 40px;
     }
-    .deadline-note span { color: var(--yellow); font-weight: 600; }
+    .yknot-landing .deadline-note span { color: var(--yellow); font-weight: 600; }
 
     /* ── EVENTBRITE EMBED ── */
-    .embed-section { margin-bottom: 48px; }
-    .embed-placeholder {
+    .yknot-landing .embed-section { margin-bottom: 48px; }
+    .yknot-landing .embed-placeholder {
       background: rgba(250, 250, 245, 0.03);
       border: 2px dashed rgba(42, 109, 181, 0.35);
       border-radius: 10px;
@@ -328,7 +329,7 @@
       color: var(--text-dim);
       line-height: 1.7;
     }
-    .embed-placeholder code {
+    .yknot-landing .embed-placeholder code {
       display: block;
       background: rgba(9, 9, 9, 0.6);
       border-radius: 6px;
@@ -340,45 +341,43 @@
     }
 
     /* ── FOOTER ── */
-    .footer {
+    .yknot-landing .footer {
       background: var(--surface);
       border-top: 1px solid rgba(204, 43, 43, 0.2);
       padding: 28px 24px;
       text-align: center;
     }
-    .footer-logo {
+    .yknot-landing .footer-logo {
       font-family: 'Playfair Display', serif;
       font-size: 18px;
       font-weight: 700;
       color: var(--red);
       margin-bottom: 8px;
     }
-    .footer-logo span { color: var(--text); }
-    .footer-tagline { font-size: 12px; color: var(--text-dim); margin-bottom: 14px; }
-    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    .footer-links a { font-size: 12px; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--white); }
+    .yknot-landing .footer-logo span { color: var(--text); }
+    .yknot-landing .footer-tagline { font-size: 12px; color: var(--text-dim); margin-bottom: 14px; }
+    .yknot-landing .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .yknot-landing .footer-links a { font-size: 12px; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+    .yknot-landing .footer-links a:hover { color: var(--white); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 560px) {
-      .price-box { flex-direction: column; align-items: flex-start; }
-      .btn-buy { width: 100%; text-align: center; }
-      .cd-separator { display: none; }
-      .detail-bar { gap: 16px; }
-      .cd-box {
+      .yknot-landing .price-box { flex-direction: column; align-items: flex-start; }
+      .yknot-landing .btn-buy { width: 100%; text-align: center; }
+      .yknot-landing .cd-separator { display: none; }
+      .yknot-landing .detail-bar { gap: 16px; }
+      .yknot-landing .cd-box {
         min-width: 60px;
       }
-      .cd-num {
+      .yknot-landing .cd-num {
         font-size: 20px;
       }
     }
   </style>
-</head>
-<body>
 
   <!-- HERO -->
   <section class="hero">
-    <img src="https://yknotinc.org/wp-content/uploads/2025/06/Y-Knot_Logo-2.png" alt="Y-KNOT Inc. Logo" style="width: 300px; margin-bottom: 20px;" />
+    <img src="https://yknotinc.org/wp-content/uploads/2025/06/Y-Knot_Logo-2.png" alt="Y-KNOT Inc. Logo" class="hero-logo" />
     <div class="eyebrow">Y-KNOT Inc. Presents</div>
     <div class="badge">🎟 Early Bird Special</div>
     <h1 class="hero-title">The Sneaker <span class="accent">Ball</span></h1>
@@ -534,15 +533,20 @@
 
   <script>
     (function () {
+      var root = document.currentScript && document.currentScript.closest('.yknot-landing');
       var target = new Date(new Date().getFullYear(), 3, 14, 23, 59, 59);
       if (Date.now() > target.getTime()) {
         target = new Date(new Date().getFullYear() + 1, 3, 14, 23, 59, 59);
       }
 
-      var elDays = document.getElementById('cd-d');
-      var elHours = document.getElementById('cd-h');
-      var elMinutes = document.getElementById('cd-m');
-      var elSeconds = document.getElementById('cd-s');
+      function getEl(id) {
+        return root ? root.querySelector('#' + id) : document.getElementById(id);
+      }
+
+      var elDays = getEl('cd-d');
+      var elHours = getEl('cd-h');
+      var elMinutes = getEl('cd-m');
+      var elSeconds = getEl('cd-s');
 
       function pad(value) {
         return String(value).padStart(2, '0');
@@ -553,10 +557,10 @@
         var diff = target.getTime() - now.getTime();
 
         if (diff <= 0) {
-          elDays.textContent = '00';
-          elHours.textContent = '00';
-          elMinutes.textContent = '00';
-          elSeconds.textContent = '00';
+          if (elDays) elDays.textContent = '00';
+          if (elHours) elHours.textContent = '00';
+          if (elMinutes) elMinutes.textContent = '00';
+          if (elSeconds) elSeconds.textContent = '00';
           return;
         }
 
@@ -566,16 +570,14 @@
         var minutes = Math.floor((totalSeconds % 3600) / 60);
         var seconds = totalSeconds % 60;
 
-        elDays.textContent = pad(days);
-        elHours.textContent = pad(hours);
-        elMinutes.textContent = pad(minutes);
-        elSeconds.textContent = pad(seconds);
+        if (elDays) elDays.textContent = pad(days);
+        if (elHours) elHours.textContent = pad(hours);
+        if (elMinutes) elMinutes.textContent = pad(minutes);
+        if (elSeconds) elSeconds.textContent = pad(seconds);
       }
 
       tick();
       setInterval(tick, 1000);
     })();
   </script>
-
-</body>
-</html>
+</div>

@@ -705,6 +705,8 @@
     transition: all 0.25s;
     line-height: 1;
   }
+  .year-tab[data-panel="y2025"]:hover,
+  .year-tab[data-panel="y2025"].active { background: var(--white); border-color: var(--white); color: var(--red); }
   .year-tab[data-panel="y2024"]:hover,
   .year-tab[data-panel="y2024"].active { background: var(--orange); border-color: var(--orange); color: var(--white); }
   .year-tab[data-panel="y2023"]:hover,
@@ -1127,19 +1129,35 @@
 <section class="gallery-section">
   <div class="gallery-inner">
     <div class="gallery-header">
-      <span class="section-label" style="text-align:center; display:block;">Through the Years</span>
+      <span class="section-label" style="text-align:center; display:block;">2019-2025</span>
       <h2 class="section-title" style="text-align:center; margin-bottom:16px;">Gala Gallery</h2>
       <div class="rule"></div>
     </div>
 
     <div class="year-tabs" role="tablist">
-      <button class="year-tab active" data-panel="y2024" role="tab" aria-selected="true">2024</button>
+      <button class="year-tab active" data-panel="y2025" role="tab" aria-selected="true">2025</button>
+      <button class="year-tab" data-panel="y2024" role="tab" aria-selected="false">2024</button>
       <button class="year-tab" data-panel="y2023" role="tab" aria-selected="false">2023</button>
       <button class="year-tab" data-panel="y2022" role="tab" aria-selected="false">2022</button>
       <button class="year-tab" data-panel="y2019" role="tab" aria-selected="false">2019</button>
     </div>
 
-    <div class="gallery-panel active" id="y2024" role="tabpanel">
+    <div class="gallery-panel active" id="y2025" role="tabpanel">
+      <div class="gallery-year-title">
+        <span class="gallery-year-name">Rooted In Excellence</span>
+        <span class="gallery-year-theme">A Celebration in Shades Of Brown</span>
+      </div>
+      <div class="gallery-grid wide">
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2026/03/1000027401.jpg" alt="2024 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2026/03/1000027312.jpg" alt="2024 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2026/03/1000027312.jpg" alt="2024 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2026/03/1000027400.jpg" alt="2024 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2026/03/1000027329.jpg" alt="2024 Gala"></div>
+        <div class="gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2026/03/1000027398.jpg" alt="2024 Gala"></div>
+      </div>
+    </div>
+
+    <div class="gallery-panel" id="y2024" role="tabpanel">
       <div class="gallery-year-title">
         <span class="gallery-year-name">A Night of Elegance in Orange</span>
         <span class="gallery-year-theme">5th Annual · 2024</span>

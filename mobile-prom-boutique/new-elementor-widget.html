@@ -1,0 +1,757 @@
+<!-- Elementor HTML Widget: Mobile Prom Boutique 2026 Recap (No Navbar/Footer) -->
+<div class="mpb-2026-widget" id="mpb-2026-widget">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap');
+
+    .mpb-2026-widget {
+      --red: #C8102E;
+      --red2: #8B0000;
+      --green: #1A7A3A;
+      --blue: #0D3D8C;
+      --gold: #D4A017;
+      --black: #111111;
+      --offwhite: #FAF8F4;
+      --light: #F2EFE9;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+
+      font-family: var(--sans);
+      color: var(--black);
+      background: var(--offwhite);
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    .mpb-2026-widget,
+    .mpb-2026-widget *,
+    .mpb-2026-widget *::before,
+    .mpb-2026-widget *::after {
+      box-sizing: border-box;
+    }
+
+    .mpb-2026-widget .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .mpb-2026-widget .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .mpb-2026-widget .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mpb-2026-widget .hero {
+      position: relative;
+      background: var(--black);
+      color: #fff;
+      padding: 100px 0 80px;
+      overflow: hidden;
+    }
+
+    .mpb-2026-widget .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -55deg,
+        transparent,
+        transparent 60px,
+        rgba(200,16,46,.07) 60px,
+        rgba(200,16,46,.07) 61px
+      );
+      pointer-events: none;
+    }
+
+    .mpb-2026-widget .hero::after {
+      content: '';
+      position: absolute;
+      right: -180px;
+      top: -120px;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,16,46,.35) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .mpb-2026-widget .hero__inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .mpb-2026-widget .hero__eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .mpb-2026-widget .hero__title {
+      font-family: var(--serif);
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 900;
+      line-height: 1.05;
+      margin: 0 0 20px;
+    }
+
+    .mpb-2026-widget .hero__title span {
+      color: var(--red);
+    }
+
+    .mpb-2026-widget .hero__sub {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--gold);
+      margin: 0 0 24px;
+      letter-spacing: .03em;
+    }
+
+    .mpb-2026-widget .hero__body {
+      font-size: 16px;
+      line-height: 1.75;
+      color: rgba(255,255,255,.82);
+      margin: 0 0 40px;
+      max-width: 480px;
+    }
+
+    .mpb-2026-widget .hero__btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .mpb-2026-widget .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 13px 26px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: transform .18s, box-shadow .18s;
+      cursor: pointer;
+    }
+
+    .mpb-2026-widget .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.3);
+    }
+
+    .mpb-2026-widget .btn--primary { background: var(--red); color: #fff; }
+    .mpb-2026-widget .btn--secondary { background: var(--gold); color: #111; }
+    .mpb-2026-widget .btn--outline {
+      border: 2px solid rgba(255,255,255,.45);
+      color: #fff;
+      background: transparent;
+    }
+
+    .mpb-2026-widget .hero__badge-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .mpb-2026-widget .season-badge {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: var(--red);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 12px rgba(200,16,46,.2), 0 0 0 24px rgba(200,16,46,.08);
+      animation: mpbPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes mpbPulse {
+      0%, 100% { box-shadow: 0 0 0 12px rgba(200,16,46,.2), 0 0 0 24px rgba(200,16,46,.08); }
+      50% { box-shadow: 0 0 0 18px rgba(200,16,46,.15), 0 0 0 36px rgba(200,16,46,.05); }
+    }
+
+    .mpb-2026-widget .season-badge__num {
+      font-family: var(--serif);
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 1;
+      color: #fff;
+    }
+
+    .mpb-2026-widget .season-badge__label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.85);
+      margin-top: 4px;
+    }
+
+    .mpb-2026-widget .season-pills {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .mpb-2026-widget .season-pill {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 999px;
+      padding: 7px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,.85);
+    }
+
+    .mpb-2026-widget .stats {
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 0;
+    }
+
+    .mpb-2026-widget .stats__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .mpb-2026-widget .stat-tile {
+      padding: 36px 24px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,.08);
+      position: relative;
+      overflow: hidden;
+      transition: background .25s;
+    }
+
+    .mpb-2026-widget .stat-tile:last-child {
+      border-right: none;
+    }
+
+    .mpb-2026-widget .stat-tile:hover {
+      background: rgba(255,255,255,.04);
+    }
+
+    .mpb-2026-widget .stat-tile::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    }
+
+    .mpb-2026-widget .stat-tile:nth-child(1)::before { background: var(--red); }
+    .mpb-2026-widget .stat-tile:nth-child(2)::before { background: var(--gold); }
+    .mpb-2026-widget .stat-tile:nth-child(3)::before { background: var(--green); }
+    .mpb-2026-widget .stat-tile:nth-child(4)::before { background: var(--blue); }
+
+    .mpb-2026-widget .stat-tile__num {
+      font-family: var(--serif);
+      font-size: 52px;
+      font-weight: 900;
+      line-height: 1;
+      color: #fff;
+    }
+
+    .mpb-2026-widget .stat-tile:nth-child(1) .stat-tile__num { color: var(--red); }
+    .mpb-2026-widget .stat-tile:nth-child(2) .stat-tile__num { color: var(--gold); }
+    .mpb-2026-widget .stat-tile:nth-child(3) .stat-tile__num { color: #4ECB71; }
+    .mpb-2026-widget .stat-tile:nth-child(4) .stat-tile__num { color: #5B8FE8; }
+
+    .mpb-2026-widget .stat-tile__label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      margin-top: 8px;
+    }
+
+    .mpb-2026-widget .video-section {
+      padding: 96px 0;
+      background: var(--offwhite);
+    }
+
+    .mpb-2026-widget .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin: 0 0 12px;
+    }
+
+    .mpb-2026-widget .section-title {
+      font-family: var(--serif);
+      font-size: clamp(30px, 4vw, 46px);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--black);
+      margin: 0 0 18px;
+    }
+
+    .mpb-2026-widget .section-body {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #444;
+      max-width: 620px;
+      margin: 0 0 40px;
+    }
+
+    .mpb-2026-widget .video-embed {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--black);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 24px 64px rgba(0,0,0,.18);
+      margin-top: 36px;
+    }
+
+    .mpb-2026-widget .video-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .mpb-2026-widget .stops-section {
+      padding: 96px 0;
+      background: var(--light);
+    }
+
+    .mpb-2026-widget .stops-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      margin-top: 44px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .mpb-2026-widget .stop-card {
+      padding: 28px 20px;
+      border-right: 1px solid #ddd;
+      background: #fff;
+      text-align: center;
+      transition: background .2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mpb-2026-widget .stop-card:last-child {
+      border-right: none;
+    }
+
+    .mpb-2026-widget .stop-card:hover {
+      background: var(--offwhite);
+    }
+
+    .mpb-2026-widget .stop-card::after {
+      content: 'ok';
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      font-size: 10px;
+      color: var(--green);
+      font-weight: 700;
+      background: #e6f7ec;
+      border-radius: 999px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+    }
+
+    .mpb-2026-widget .stop-card__date {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+
+    .mpb-2026-widget .stop-card__name {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .mpb-2026-widget .stop-card__city {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .mpb-2026-widget .involve-section {
+      padding: 96px 0;
+      background: var(--offwhite);
+    }
+
+    .mpb-2026-widget .involve-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .mpb-2026-widget .involve-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 40px 32px;
+      border-top: 5px solid transparent;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      transition: transform .22s, box-shadow .22s;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mpb-2026-widget .involve-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.12);
+    }
+
+    .mpb-2026-widget .involve-card:nth-child(1) { border-top-color: var(--red); }
+    .mpb-2026-widget .involve-card:nth-child(2) { border-top-color: var(--green); }
+    .mpb-2026-widget .involve-card:nth-child(3) { border-top-color: var(--blue); }
+
+    .mpb-2026-widget .involve-card__icon {
+      font-size: 12px;
+      margin-bottom: 18px;
+      display: inline-block;
+      letter-spacing: .12em;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #666;
+    }
+
+    .mpb-2026-widget .involve-card__title {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 0 12px;
+      color: var(--black);
+    }
+
+    .mpb-2026-widget .involve-card__body {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #555;
+      flex: 1;
+      margin: 0 0 28px;
+    }
+
+    .mpb-2026-widget .involve-card__link {
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mpb-2026-widget .involve-card:nth-child(1) .involve-card__link { color: var(--red); }
+    .mpb-2026-widget .involve-card:nth-child(2) .involve-card__link { color: var(--green); }
+    .mpb-2026-widget .involve-card:nth-child(3) .involve-card__link { color: var(--blue); }
+
+    .mpb-2026-widget .involve-card__link::after {
+      content: '->';
+    }
+
+    .mpb-2026-widget .donate-section {
+      background: var(--red2);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .mpb-2026-widget .donate-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(255,255,255,.03) 40px,
+        rgba(255,255,255,.03) 41px
+      );
+    }
+
+    .mpb-2026-widget .donate-section .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .mpb-2026-widget .donate-section .section-title {
+      color: #fff;
+    }
+
+    .mpb-2026-widget .donate-section .section-body {
+      color: rgba(255,255,255,.8);
+      margin: 0 auto 36px;
+      max-width: 560px;
+    }
+
+    @media (max-width: 900px) {
+      .mpb-2026-widget .hero__inner { grid-template-columns: 1fr; }
+      .mpb-2026-widget .hero__badge-wrap { display: none; }
+      .mpb-2026-widget .stats__grid { grid-template-columns: repeat(2, 1fr); }
+      .mpb-2026-widget .stat-tile { border-bottom: 1px solid rgba(255,255,255,.08); }
+      .mpb-2026-widget .stops-grid {
+        grid-template-columns: 1fr;
+        border: none;
+        gap: 12px;
+      }
+      .mpb-2026-widget .stop-card {
+        border-right: none;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+      .mpb-2026-widget .involve-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .mpb-2026-widget .hero { padding: 70px 0 60px; }
+      .mpb-2026-widget .hero__btns { flex-direction: column; }
+      .mpb-2026-widget .btn { justify-content: center; }
+    }
+  </style>
+
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="hero__inner">
+        <div class="fade-up">
+          <p class="hero__eyebrow">Season Complete - 2026</p>
+          <h1 class="hero__title">The 2026 Tour<br>Is a <span>Wrap!</span></h1>
+          <p class="hero__sub">410 Students. 5 Cities. One Mission.</p>
+          <p class="hero__body">
+            The Mobile Prom Boutique 2026 has officially closed its doors - and what a season it was!
+            This year, Y-KNOT traveled across New Jersey, Maryland, and Virginia to bring the ultimate
+            prom experience right to the community, at absolutely no cost to the students we served.
+          </p>
+          <div class="hero__btns">
+            <a href="#recap-video" class="btn btn--primary">Watch the Recap</a>
+            <a href="#get-involved-2027" class="btn btn--secondary">Get Involved for 2027</a>
+            <a href="https://yknotinc.org/donate/" class="btn btn--outline" target="_blank" rel="noopener">Donate</a>
+          </div>
+        </div>
+
+        <div class="hero__badge-wrap fade-up" style="transition-delay:.15s">
+          <div class="season-badge">
+            <span class="season-badge__num">6</span>
+            <span class="season-badge__label">Years Strong</span>
+          </div>
+          <div class="season-pills">
+            <span class="season-pill">Bridgeton, NJ</span>
+            <span class="season-pill">Laurel, MD</span>
+            <span class="season-pill">Forestville, MD</span>
+            <span class="season-pill">Portsmouth, VA</span>
+            <span class="season-pill">Newport News, VA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container" style="padding:0;">
+      <div class="stats__grid">
+        <div class="stat-tile fade-up">
+          <div class="stat-tile__num">410</div>
+          <div class="stat-tile__label">Youth Served</div>
+        </div>
+        <div class="stat-tile fade-up" style="transition-delay:.1s">
+          <div class="stat-tile__num">5</div>
+          <div class="stat-tile__label">Cities</div>
+        </div>
+        <div class="stat-tile fade-up" style="transition-delay:.2s">
+          <div class="stat-tile__num">3</div>
+          <div class="stat-tile__label">States</div>
+        </div>
+        <div class="stat-tile fade-up" style="transition-delay:.3s">
+          <div class="stat-tile__num">$0</div>
+          <div class="stat-tile__label">Cost to Students</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-section" id="recap-video">
+    <div class="container">
+      <div class="fade-up">
+        <p class="section-label">Tour Recap</p>
+        <h2 class="section-title">Relive the Magic -<br>Watch the 2026 Tour Recap</h2>
+        <p class="section-body">
+          From Bridgeton, NJ to Newport News, VA - we brought prom to the people. Watch the highlights
+          from our 2026 Mobile Prom Boutique Tour and see what it means when a community shows up for its young people.
+        </p>
+      </div>
+
+      <div class="video-embed fade-up" style="transition-delay:.15s" id="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/jdeRVt3ZwEs"
+          title="Mobile Prom Boutique 2026 Tour Recap"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="stops-section">
+    <div class="container">
+      <div class="fade-up">
+        <p class="section-label">Where We Went</p>
+        <h2 class="section-title">2026 Tour Stops</h2>
+        <p class="section-body">
+          Five stops. Five communities. Hundreds of students who deserved to walk into prom night
+          feeling their absolute best.
+        </p>
+      </div>
+
+      <div class="stops-grid fade-up" style="transition-delay:.1s">
+        <div class="stop-card">
+          <div class="stop-card__date">March 14</div>
+          <div class="stop-card__name">ALMS Center</div>
+          <div class="stop-card__city">Bridgeton, NJ</div>
+        </div>
+        <div class="stop-card">
+          <div class="stop-card__date">March 21</div>
+          <div class="stop-card__name">Laurel High School</div>
+          <div class="stop-card__city">Laurel, MD</div>
+        </div>
+        <div class="stop-card">
+          <div class="stop-card__date">March 28</div>
+          <div class="stop-card__name">Suitland Community Center</div>
+          <div class="stop-card__city">Forestville, MD</div>
+        </div>
+        <div class="stop-card">
+          <div class="stop-card__date">April 11</div>
+          <div class="stop-card__name">I.C. Norcom High School</div>
+          <div class="stop-card__city">Portsmouth, VA</div>
+        </div>
+        <div class="stop-card">
+          <div class="stop-card__date">April 18</div>
+          <div class="stop-card__name">Heritage High School</div>
+          <div class="stop-card__city">Newport News, VA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="involve-section" id="get-involved-2027">
+    <div class="container">
+      <div class="fade-up">
+        <p class="section-label">Looking Ahead</p>
+        <h2 class="section-title">Be Part of the 2027 Season</h2>
+        <p class="section-body">
+          Planning for 2027 is already underway. Whether you want to donate, volunteer, or bring the
+          boutique to your school or city - we want to hear from you.
+        </p>
+      </div>
+
+      <div class="involve-grid">
+        <div class="involve-card fade-up" style="transition-delay:.05s">
+          <span class="involve-card__icon">Volunteer</span>
+          <h3 class="involve-card__title">Volunteer</h3>
+          <p class="involve-card__body">
+            Lend your time and energy to help make prom dreams a reality for students in your community.
+            Every hand on deck makes a difference.
+          </p>
+          <a href="https://yknotinc.org/volunteer-sign-up/" class="involve-card__link">Sign Up to Volunteer</a>
+        </div>
+
+        <div class="involve-card fade-up" style="transition-delay:.12s">
+          <span class="involve-card__icon">Formal Wear</span>
+          <h3 class="involve-card__title">Donate Formal Wear</h3>
+          <p class="involve-card__body">
+            Every dress, suit, or accessory you donate gives a student a moment they will remember forever.
+            Find a drop-off location near you.
+          </p>
+          <a href="https://yknotinc.org/drop-off-locations/" class="involve-card__link">Find a Drop-Off Location</a>
+        </div>
+
+        <div class="involve-card fade-up" style="transition-delay:.2s">
+          <span class="involve-card__icon">Host Site</span>
+          <h3 class="involve-card__title">Host a Stop</h3>
+          <p class="involve-card__body">
+            Is your school, community center, or organization ready to be a 2027 boutique location?
+            We would love to bring the boutique to your community.
+          </p>
+          <a href="mailto:rgibbons@yknotinc.org" class="involve-card__link">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="donate-section">
+    <div class="container">
+      <div class="fade-up">
+        <p class="section-label" style="color:rgba(255,255,255,.6); text-align:center;">Support the Mission</p>
+        <h2 class="section-title">Help Us Do It Again in 2027</h2>
+        <p class="section-body">
+          Your donations make this program possible. Every contribution goes directly toward providing free formal wear
+          and reducing the financial barriers that stand between a young person and their prom night.
+        </p>
+        <a href="https://yknotinc.org/donate/" class="btn btn--secondary" target="_blank" rel="noopener">Make a Donation</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  (function () {
+    const widgets = document.querySelectorAll('.mpb-2026-widget');
+
+    widgets.forEach((widget) => {
+      const animatedElements = widget.querySelectorAll('.fade-up');
+
+      if (!animatedElements.length) {
+        return;
+      }
+
+      if (!('IntersectionObserver' in window)) {
+        animatedElements.forEach((el) => el.classList.add('visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      animatedElements.forEach((el) => observer.observe(el));
+    });
+  })();
+</script>

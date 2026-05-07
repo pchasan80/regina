@@ -1,0 +1,340 @@
+<style>
+	.yk-gallery-widget {
+		--red: #cc2b2b;
+		--green: #3a9a3c;
+		--blue: #2a6db5;
+		--orange: #e87820;
+		--surface: #141414;
+		--surface2: #1c1c1c;
+		--text-dim: #888070;
+		--white: #fafaf5;
+		color: #eee8e0;
+		font-family: "Jost", "Segoe UI", sans-serif;
+		background: var(--surface);
+		padding: 96px 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.05);
+	}
+
+	.yk-gallery-widget * {
+		box-sizing: border-box;
+	}
+
+	.yk-gallery-inner {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 0 24px;
+	}
+
+	.yk-gallery-header {
+		text-align: center;
+		margin-bottom: 56px;
+	}
+
+	.yk-section-label {
+		font-family: "Cinzel", "Times New Roman", serif;
+		font-size: 10px;
+		font-weight: 600;
+		letter-spacing: 0.42em;
+		text-transform: uppercase;
+		color: var(--red);
+		display: block;
+		margin-bottom: 16px;
+	}
+
+	.yk-section-title {
+		font-family: "Cormorant Garamond", Georgia, serif;
+		font-size: clamp(28px, 3.5vw, 46px);
+		font-weight: 300;
+		color: var(--white);
+		line-height: 1.25;
+		margin-bottom: 16px;
+	}
+
+	.yk-rule {
+		width: 60px;
+		height: 2px;
+		background: linear-gradient(90deg, transparent, var(--red), transparent);
+		margin: 0 auto;
+	}
+
+	.yk-year-tabs {
+		display: flex;
+		justify-content: center;
+		gap: 2px;
+		flex-wrap: wrap;
+		margin-bottom: 52px;
+	}
+
+	.yk-year-tab {
+		font-family: "Cinzel", "Times New Roman", serif;
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: 0.3em;
+		text-transform: uppercase;
+		color: var(--text-dim);
+		background: transparent;
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		padding: 12px 30px;
+		cursor: pointer;
+		transition: all 0.25s;
+		line-height: 1;
+        border-radius: 0!important;
+	}
+
+	.yk-year-tab[data-panel="y2025"]:hover,
+	.yk-year-tab[data-panel="y2025"].active {
+		background: var(--red);
+		border-color: var(--red);
+		color: var(--white);
+	}
+
+	.yk-year-tab[data-panel="y2024"]:hover,
+	.yk-year-tab[data-panel="y2024"].active {
+		background: var(--orange);
+		border-color: var(--orange);
+		color: var(--white);
+	}
+
+	.yk-year-tab[data-panel="y2023"]:hover,
+	.yk-year-tab[data-panel="y2023"].active {
+		background: var(--green);
+		border-color: var(--green);
+		color: var(--white);
+	}
+
+	.yk-year-tab[data-panel="y2022"]:hover,
+	.yk-year-tab[data-panel="y2022"].active {
+		background: var(--red);
+		border-color: var(--red);
+		color: var(--white);
+	}
+
+	.yk-year-tab[data-panel="y2019"]:hover,
+	.yk-year-tab[data-panel="y2019"].active {
+		background: var(--blue);
+		border-color: var(--blue);
+		color: var(--white);
+	}
+
+	.yk-gallery-panel {
+		display: none;
+	}
+
+	.yk-gallery-panel.active {
+		display: block;
+	}
+
+	.yk-gallery-year-title {
+		text-align: center;
+		margin-bottom: 32px;
+	}
+
+	.yk-gallery-year-name {
+		font-family: "Cormorant Garamond", Georgia, serif;
+		font-size: clamp(22px, 3vw, 36px);
+		font-weight: 300;
+		font-style: italic;
+		display: block;
+	}
+
+	#y2024 .yk-gallery-year-name {
+		color: var(--orange);
+	}
+
+	#y2023 .yk-gallery-year-name {
+		color: var(--green);
+	}
+
+	#y2022 .yk-gallery-year-name {
+		color: var(--red);
+	}
+
+	#y2019 .yk-gallery-year-name {
+		color: var(--blue);
+	}
+
+	.yk-gallery-year-theme {
+		font-size: 11px;
+		letter-spacing: 0.22em;
+		text-transform: uppercase;
+		color: var(--text-dim);
+		display: block;
+		margin-top: 8px;
+	}
+
+	.yk-gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		gap: 3px;
+	}
+
+	.yk-gallery-grid.wide {
+		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	}
+
+	.yk-gallery-item {
+		position: relative;
+		aspect-ratio: 4 / 3;
+		overflow: hidden;
+		background: var(--surface2);
+	}
+
+	.yk-gallery-item img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.5s ease, filter 0.4s;
+		filter: brightness(0.82) saturate(0.85);
+		display: block;
+        border-radius: 0!important;
+	}
+
+	.yk-gallery-item:hover img {
+		transform: scale(1.06);
+		filter: brightness(1) saturate(1.05);
+	}
+
+	.yk-gallery-item::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.45));
+		pointer-events: none;
+	}
+
+	@media (max-width: 640px) {
+		.yk-gallery-widget {
+			padding: 72px 0;
+		}
+
+		.yk-year-tab {
+			padding: 10px 16px;
+			letter-spacing: 0.2em;
+		}
+	}
+</style>
+
+<section class="yk-gallery-widget" aria-label="Gala Gallery">
+	<div class="yk-gallery-inner">
+		<div class="yk-gallery-header">
+			<span class="yk-section-label" style="text-align: center; display: block;">2019-2025</span>
+			<h2 class="yk-section-title" style="text-align: center;">Gala Gallery</h2>
+			<div class="yk-rule"></div>
+		</div>
+
+		<div class="yk-year-tabs" role="tablist" aria-label="Gallery year tabs">
+			<button class="yk-year-tab active" data-panel="y2025" type="button" role="tab" aria-selected="true">2025</button>
+			<button class="yk-year-tab" data-panel="y2024" type="button" role="tab" aria-selected="false">2024</button>
+			<button class="yk-year-tab" data-panel="y2023" type="button" role="tab" aria-selected="false">2023</button>
+			<button class="yk-year-tab" data-panel="y2022" type="button" role="tab" aria-selected="false">2022</button>
+			<button class="yk-year-tab" data-panel="y2019" type="button" role="tab" aria-selected="false">2019</button>
+		</div>
+
+		<div class="yk-gallery-panel active" id="y2025" role="tabpanel">
+			<div class="yk-gallery-year-title">
+				<span class="yk-gallery-year-name">Rooted In Excellence</span>
+				<span class="yk-gallery-year-theme">A Celebration in Shades Of Brown</span>
+			</div>
+			<div class="yk-gallery-grid wide">
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2026/03/1000027401.jpg" alt="2025 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2026/03/1000027312.jpg" alt="2025 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2026/03/1000027312.jpg" alt="2025 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2026/03/1000027400.jpg" alt="2025 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2026/03/1000027329.jpg" alt="2025 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2026/03/1000027398.jpg" alt="2025 Gala"></div>
+			</div>
+		</div>
+
+		<div class="yk-gallery-panel" id="y2024" role="tabpanel">
+			<div class="yk-gallery-year-title">
+				<span class="yk-gallery-year-name">A Night of Elegance in Orange</span>
+				<span class="yk-gallery-year-theme">5th Annual &middot; 2024</span>
+			</div>
+			<div class="yk-gallery-grid wide">
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-1.png" alt="2024 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-2.png" alt="2024 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-3.png" alt="2024 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-4.png" alt="2024 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-5.png" alt="2024 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-6.png" alt="2024 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-7.png" alt="2024 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-8.png" alt="2024 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2024-Orange-Gala-9.png" alt="2024 Gala"></div>
+			</div>
+		</div>
+
+		<div class="yk-gallery-panel" id="y2023" role="tabpanel">
+			<div class="yk-gallery-year-title">
+				<span class="yk-gallery-year-name">You Have to Be Seen Green</span>
+				<span class="yk-gallery-year-theme">4th Annual &middot; 2023 &middot; Growing, Resilient, Effective, Evolving &amp; Noble</span>
+			</div>
+			<div class="yk-gallery-grid">
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2023-Green-Gala-1.png" alt="2023 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2023-Green-Gala-2.png" alt="2023 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2023-Green-Gala-3.png" alt="2023 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2023-Green-Gala-4.png" alt="2023 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2023-Green-Gala-5.png" alt="2023 Gala"></div>
+			</div>
+		</div>
+
+		<div class="yk-gallery-panel" id="y2022" role="tabpanel">
+			<div class="yk-gallery-year-title">
+				<span class="yk-gallery-year-name">Intentionally InspiRED</span>
+				<span class="yk-gallery-year-theme">3rd Annual &middot; 2022</span>
+			</div>
+			<div class="yk-gallery-grid wide">
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2022-Red-Gala-1.png" alt="2022 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2022-Red-Gala-2.png" alt="2022 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2022-Red-Gala-3.png" alt="2022 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2022-Red-Gala-4.png" alt="2022 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2022-Red-Gala-5.png" alt="2022 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2022-Red-Gala-6.png" alt="2022 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2022-Red-Gala-7.png" alt="2022 Gala"></div>
+			</div>
+		</div>
+
+		<div class="yk-gallery-panel" id="y2019" role="tabpanel">
+			<div class="yk-gallery-year-title">
+				<span class="yk-gallery-year-name">It Is a Family Affair</span>
+				<span class="yk-gallery-year-theme">1st Annual &middot; 2019 &middot; Black &amp; White Gala</span>
+			</div>
+			<div class="yk-gallery-grid">
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2019-Black-White-Gala-1.png" alt="2019 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2019-Black-White-Gala-2.png" alt="2019 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2019-Black-White-Gala-3.png" alt="2019 Gala"></div>
+				<div class="yk-gallery-item"><img src="https://yknotinc.org/wp-content/uploads/2025/05/2019-Black-White-Gala-4.png" alt="2019 Gala"></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	(function () {
+		var widgets = document.querySelectorAll('.yk-gallery-widget');
+		widgets.forEach(function (widget) {
+			var tabs = widget.querySelectorAll('.yk-year-tab');
+			var panels = widget.querySelectorAll('.yk-gallery-panel');
+
+			tabs.forEach(function (tab) {
+				tab.addEventListener('click', function () {
+					tabs.forEach(function (t) {
+						t.classList.remove('active');
+						t.setAttribute('aria-selected', 'false');
+					});
+
+					panels.forEach(function (p) {
+						p.classList.remove('active');
+					});
+
+					tab.classList.add('active');
+					tab.setAttribute('aria-selected', 'true');
+
+					var target = widget.querySelector('#' + tab.dataset.panel);
+					if (target) {
+						target.classList.add('active');
+					}
+				});
+			});
+		});
+	})();
+</script>

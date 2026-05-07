@@ -1,0 +1,233 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DNS Records</title>
+  <style>
+    :root { color-scheme: light; }
+    body { margin: 0; font-family: Segoe UI, Tahoma, Arial, sans-serif; background: #f5f7fb; color: #1f2937; }
+    .wrap { max-width: 1200px; margin: 24px auto; padding: 0 16px; }
+    h1 { margin: 0 0 6px; font-size: 28px; }
+    .meta { margin: 0 0 16px; color: #4b5563; }
+    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
+    table { width: 100%; border-collapse: collapse; }
+    thead { background: #eef2ff; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+    th { font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: #374151; }
+    td { font-size: 14px; line-height: 1.45; }
+    tbody tr:hover { background: #f9fafb; }
+    .type { font-weight: 700; white-space: nowrap; }
+    .name { white-space: nowrap; }
+    .value { word-break: break-word; }
+    @media (max-width: 900px) {
+      .name { white-space: normal; }
+      th, td { padding: 9px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>DNS Records</h1>
+    <p class="meta">Human-readable export of DNS entries (37 records).</p>
+    <section class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="type">TXT</td>
+            <td class="name">default._domainkey.staging6.yknotinc.org.</td>
+            <td class="value">v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC1HFUMh6cYwpVmLd31sqs778ZzSYHZqOBlAkf+oAUDGma5HzkU4oicmPco0ikeOqvKXvjmAScq+tMF99B1pki838TKnQMQIRnn2V/ZB5ZqG1g9OYnHBlM3e9FdkXzvBvtlriCiXBV2oKhLzwYU/w/ZxlYwATknUQwZNXZIoedZoQIDAQAB;</td>
+          </tr>
+          <tr>
+            <td class="type">TXT</td>
+            <td class="name">staging6.yknotinc.org.</td>
+            <td class="value">v=spf1 +a +mx include:yknotinc.org.spf.auto.dnssmarthost.net ~all</td>
+          </tr>
+          <tr>
+            <td class="type">A</td>
+            <td class="name">www.staging6.yknotinc.org.</td>
+            <td class="value">points to 35.212.113.186</td>
+          </tr>
+          <tr>
+            <td class="type">A</td>
+            <td class="name">staging6.yknotinc.org.</td>
+            <td class="value">points to 35.212.113.186</td>
+          </tr>
+          <tr>
+            <td class="type">TXT</td>
+            <td class="name">yknotinc.org.</td>
+            <td class="value">google-site-verification=IFw3xG0C3dEUlLeBprP_e73HwiighKPcT7oSEdTSntY</td>
+          </tr>
+          <tr>
+            <td class="type">TXT</td>
+            <td class="name">default._domainkey.dev.bossladies.yknotinc.org.</td>
+            <td class="value">v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDpNaZgonRv9yUekP6CrhqMFVqguvBaAvVp/uIBW+jHb5N8X8FWeYc6Zwe9sMus6UmTWv5uW6GIHUWo8c9NWDXsIB4DCgE5VGFjAcpJ/jCh4c5UxkYbkAWQOpGYj/2kqht1LMFLDrFrokeklXhVP7HwhyonIPUReeVSmb10qB16KwIDAQAB;</td>
+          </tr>
+          <tr>
+            <td class="type">TXT</td>
+            <td class="name">dev.bossladies.yknotinc.org.</td>
+            <td class="value">v=spf1 +a +mx include:yknotinc.org.spf.auto.dnssmarthost.net ~all</td>
+          </tr>
+          <tr>
+            <td class="type">A</td>
+            <td class="name">www.dev.bossladies.yknotinc.org.</td>
+            <td class="value">points to 35.212.113.186</td>
+          </tr>
+          <tr>
+            <td class="type">A</td>
+            <td class="name">dev.bossladies.yknotinc.org.</td>
+            <td class="value">points to 35.212.113.186</td>
+          </tr>
+          <tr>
+            <td class="type">TXT</td>
+            <td class="name">default._domainkey.bossladies.yknotinc.org.</td>
+            <td class="value">v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC+5lliDK5n9O6nwWqJ5cZaNFQ1h8Ag6/jK0CVns3oTmx1K/Zrnh/4jaKyJN5gpyS1B3IrmOhyEp7jBqpZvOKi4f0Nx4+AvtZfPeujcf/qMfUViZi9fcIW42AiY8APxiN2TuQb49BW7rJo3L8NI1BKqcHn7y05eY0jkt3Vq+1ZkyQIDAQAB;</td>
+          </tr>
+          <tr>
+            <td class="type">TXT</td>
+            <td class="name">bossladies.yknotinc.org.</td>
+            <td class="value">v=spf1 +a +mx include:yknotinc.org.spf.auto.dnssmarthost.net ~all</td>
+          </tr>
+          <tr>
+            <td class="type">A</td>
+            <td class="name">www.bossladies.yknotinc.org.</td>
+            <td class="value">points to 35.212.113.186</td>
+          </tr>
+          <tr>
+            <td class="type">A</td>
+            <td class="name">bossladies.yknotinc.org.</td>
+            <td class="value">points to 35.212.113.186</td>
+          </tr>
+          <tr>
+            <td class="type">TXT</td>
+            <td class="name">default._domainkey.staging3.yknotinc.org.</td>
+            <td class="value">v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQClmqyWE1TIp06bDjRNFqIvLwTFvVWr6OfEkbo9WZkhgaSqc2dOx+zZijUgxcHhzLCptUepAkppvTm1/z5c+BaFfCM1PjtA0pWI7luVshFjCgBnXIhsXUpcnb8QUnkbhfdkJ7FJwht0fs9hThRDL2W2BKiLOg/zVrhEUdwozP5eUwIDAQAB;</td>
+          </tr>
+          <tr>
+            <td class="type">TXT</td>
+            <td class="name">staging3.yknotinc.org.</td>
+            <td class="value">v=spf1 +a +mx include:yknotinc.org.spf.auto.dnssmarthost.net ~all</td>
+          </tr>
+          <tr>
+            <td class="type">A</td>
+            <td class="name">www.staging3.yknotinc.org.</td>
+            <td class="value">points to 35.212.113.186</td>
+          </tr>
+          <tr>
+            <td class="type">A</td>
+            <td class="name">staging3.yknotinc.org.</td>
+            <td class="value">points to 35.212.113.186</td>
+          </tr>
+          <tr>
+            <td class="type">TXT</td>
+            <td class="name">_domainkey.yknotinc.org.</td>
+            <td class="value">v=DKIM1; o=~</td>
+          </tr>
+          <tr>
+            <td class="type">TXT</td>
+            <td class="name">yknotinc.org.</td>
+            <td class="value">google-site-verification=tZIKGymKIh9t-izw2xO1mA6r5bJMi2OBo5Hg7CW-M8s</td>
+          </tr>
+          <tr>
+            <td class="type">CNAME</td>
+            <td class="name">sip.yknotinc.org.</td>
+            <td class="value">is an alias of webdir.online.lync.com</td>
+          </tr>
+          <tr>
+            <td class="type">CNAME</td>
+            <td class="name">lyncdiscover.yknotinc.org.</td>
+            <td class="value">is an alias of webdir.online.lync.com</td>
+          </tr>
+          <tr>
+            <td class="type">CNAME</td>
+            <td class="name">enterpriseregistration.yknotinc.org.</td>
+            <td class="value">is an alias of enterpriseregistration.windows.net</td>
+          </tr>
+          <tr>
+            <td class="type">CNAME</td>
+            <td class="name">enterpriseenrollment.yknotinc.org.</td>
+            <td class="value">is an alias of enterpriseenrollment.manage.microsoft.com</td>
+          </tr>
+          <tr>
+            <td class="type">CNAME</td>
+            <td class="name">selector2._domainkey.yknotinc.org.</td>
+            <td class="value">is an alias of selector2-yknotinc-org._domainkey.yknot00.onmicrosoft.com</td>
+          </tr>
+          <tr>
+            <td class="type">CNAME</td>
+            <td class="name">selector1._domainkey.yknotinc.org.</td>
+            <td class="value">is an alias of selector1-yknotinc-org._domainkey.yknot00.onmicrosoft.com</td>
+          </tr>
+          <tr>
+            <td class="type">TXT</td>
+            <td class="name">yknotinc.org.</td>
+            <td class="value">MS=ms73672872</td>
+          </tr>
+          <tr>
+            <td class="type">MX</td>
+            <td class="name">yknotinc.org.</td>
+            <td class="value">mail is hosted at yknotinc-org.mail.protection.outlook.com with priority 10</td>
+          </tr>
+          <tr>
+            <td class="type">CNAME</td>
+            <td class="name">default._domainkey.yknotinc.org.</td>
+            <td class="value">is an alias of yknotinc.org.default.dkim.auto.dnssmarthost.net</td>
+          </tr>
+          <tr>
+            <td class="type">TXT</td>
+            <td class="name">_dmarc.yknotinc.org.</td>
+            <td class="value">v=DMARC1; p=quarantine; pct=100; rua=mailto:rua@yknotinc.org; ruf=mailto:ruf@yknotinc.org</td>
+          </tr>
+          <tr>
+            <td class="type">TXT</td>
+            <td class="name">yknotinc.org.</td>
+            <td class="value">v=spf1 include:spf.protection.outlook.com -all</td>
+          </tr>
+          <tr>
+            <td class="type">A</td>
+            <td class="name">ssh.yknotinc.org.</td>
+            <td class="value">points to 35.212.113.186</td>
+          </tr>
+          <tr>
+            <td class="type">A</td>
+            <td class="name">autodiscover.yknotinc.org.</td>
+            <td class="value">points to 35.212.113.186</td>
+          </tr>
+          <tr>
+            <td class="type">A</td>
+            <td class="name">autoconfig.yknotinc.org.</td>
+            <td class="value">points to 35.212.113.186</td>
+          </tr>
+          <tr>
+            <td class="type">A</td>
+            <td class="name">mail.yknotinc.org.</td>
+            <td class="value">points to 35.212.113.186</td>
+          </tr>
+          <tr>
+            <td class="type">A</td>
+            <td class="name">ftp.yknotinc.org.</td>
+            <td class="value">points to 35.212.113.186</td>
+          </tr>
+          <tr>
+            <td class="type">A</td>
+            <td class="name">www.yknotinc.org.</td>
+            <td class="value">points to 35.212.113.186</td>
+          </tr>
+          <tr>
+            <td class="type">A</td>
+            <td class="name">yknotinc.org.</td>
+            <td class="value">points to 35.212.113.186</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

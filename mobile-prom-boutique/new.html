@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Prom Boutique 2026 Recap | Y-KNOT Inc.</title>
+<meta name="description" content="Y-KNOT Inc. served 410 students across 5 cities during the 2026 Mobile Prom Boutique Tour. Watch the recap and get involved for 2027.">
+
+<!-- ✅ FIX 1: Both required Google Fonts preconnect tags -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- ✅ FIX 4: Open Graph / Social Sharing Meta Tags -->
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="Mobile Prom Boutique 2026 Recap | Y-KNOT Inc.">
+<meta property="og:description" content="410 students. 5 cities. One mission. Y-KNOT's 2026 Mobile Prom Boutique Tour is a wrap — watch the recap and get involved for 2027.">
+<meta property="og:url"         content="https://yknotinc.org/mobile-prom-boutique/recap-2026/">
+<meta property="og:image"       content="https://yknotinc.org/wp-content/uploads/mpb2026-og-image.jpg">
+<meta property="og:image:width"  content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name"   content="Y-KNOT Inc.">
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="Mobile Prom Boutique 2026 Recap | Y-KNOT Inc.">
+<meta name="twitter:description" content="410 students. 5 cities. One mission. Watch the 2026 tour recap.">
+<meta name="twitter:image"       content="https://yknotinc.org/wp-content/uploads/mpb2026-og-image.jpg">
+
+<style>
+  :root {
+    --red:    #C8102E;
+    --red2:   #8B0000;
+    --green:  #1A7A3A;
+    --blue:   #0D3D8C;
+    --gold:   #D4A017;
+    --orange: #E06320;
+    --black:  #111111;
+    --offwhite: #FAF8F4;
+    --light:  #F2EFE9;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans:  'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--offwhite);
+    color: var(--black);
+    overflow-x: hidden;
+  }
+
+  /* ── UTILITY ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .tag {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .tag--red   { background: var(--red);   color: #fff; }
+  .tag--gold  { background: var(--gold);  color: #fff; }
+  .tag--green { background: var(--green); color: #fff; }
+  .tag--blue  { background: var(--blue);  color: #fff; }
+
+  /* ── FADE-IN ANIMATION ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .65s ease, transform .65s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ════════════════════════════
+     ✅ FIX 2: SITE NAVIGATION
+  ════════════════════════════ */
+  .site-nav {
+    background: var(--black);
+    border-bottom: 3px solid var(--red);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  .site-nav__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .site-nav__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .site-nav__logo-mark {
+    width: 36px;
+    height: 36px;
+    background: var(--red);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+    letter-spacing: -1px;
+  }
+
+  .site-nav__logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+
+  .site-nav__logo-name {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: .02em;
+  }
+
+  .site-nav__logo-tag {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .site-nav__links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+  }
+
+  .site-nav__links a {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,.75);
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    transition: color .18s, background .18s;
+    white-space: nowrap;
+  }
+
+  .site-nav__links a:hover {
+    color: #fff;
+    background: rgba(255,255,255,.08);
+  }
+
+  .site-nav__links .nav-cta {
+    background: var(--red);
+    color: #fff !important;
+    font-weight: 600;
+  }
+
+  .site-nav__links .nav-cta:hover {
+    background: #e01025 !important;
+  }
+
+  /* mobile hamburger (hidden by default) */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    background: none;
+    border: none;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all .25s;
+  }
+
+  /* ════════════════════════════
+     HERO
+  ════════════════════════════ */
+  .hero {
+    position: relative;
+    background: var(--black);
+    color: #fff;
+    padding: 100px 0 80px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -55deg,
+      transparent,
+      transparent 60px,
+      rgba(200,16,46,.07) 60px,
+      rgba(200,16,46,.07) 61px
+    );
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    right: -180px;
+    top: -120px;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,16,46,.35) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero__inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .hero__eyebrow {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .hero__title {
+    font-family: var(--serif);
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+
+  .hero__title span { color: var(--red); }
+
+  .hero__sub {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 24px;
+    letter-spacing: .03em;
+  }
+
+  .hero__body {
+    font-size: 16px;
+    line-height: 1.75;
+    color: rgba(255,255,255,.82);
+    margin-bottom: 40px;
+    max-width: 480px;
+  }
+
+  .hero__btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 13px 26px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: transform .18s, box-shadow .18s;
+    cursor: pointer;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.3); }
+
+  .btn--primary   { background: var(--red);   color: #fff; }
+  .btn--secondary { background: var(--gold);  color: #111; }
+  .btn--outline   { border: 2px solid rgba(255,255,255,.45); color: #fff; background: transparent; }
+  .btn--green     { background: var(--green); color: #fff; }
+  .btn--blue      { background: var(--blue);  color: #fff; }
+
+  .hero__badge-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .season-badge {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: var(--red);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 12px rgba(200,16,46,.2), 0 0 0 24px rgba(200,16,46,.08);
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 12px rgba(200,16,46,.2), 0 0 0 24px rgba(200,16,46,.08); }
+    50%       { box-shadow: 0 0 0 18px rgba(200,16,46,.15), 0 0 0 36px rgba(200,16,46,.05); }
+  }
+
+  .season-badge__num {
+    font-family: var(--serif);
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1;
+    color: #fff;
+  }
+  .season-badge__label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.85);
+    margin-top: 4px;
+  }
+
+  .season-pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .season-pill {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 999px;
+    padding: 7px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,.85);
+  }
+
+  /* ════════════════════════════
+     STATS BAR
+  ════════════════════════════ */
+  .stats {
+    background: var(--black);
+    border-top: 1px solid rgba(255,255,255,.08);
+    padding: 0;
+  }
+
+  .stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stat-tile {
+    padding: 36px 24px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,.08);
+    position: relative;
+    overflow: hidden;
+    transition: background .25s;
+  }
+  .stat-tile:last-child { border-right: none; }
+  .stat-tile:hover { background: rgba(255,255,255,.04); }
+
+  .stat-tile::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .stat-tile:nth-child(1)::before { background: var(--red); }
+  .stat-tile:nth-child(2)::before { background: var(--gold); }
+  .stat-tile:nth-child(3)::before { background: var(--green); }
+  .stat-tile:nth-child(4)::before { background: var(--blue); }
+
+  .stat-tile__num {
+    font-family: var(--serif);
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1;
+    color: #fff;
+  }
+  .stat-tile:nth-child(1) .stat-tile__num { color: var(--red); }
+  .stat-tile:nth-child(2) .stat-tile__num { color: var(--gold); }
+  .stat-tile:nth-child(3) .stat-tile__num { color: #4ECB71; }
+  .stat-tile:nth-child(4) .stat-tile__num { color: #5B8FE8; }
+
+  .stat-tile__label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.55);
+    margin-top: 8px;
+  }
+
+  /* ════════════════════════════
+     VIDEO SECTION
+  ════════════════════════════ */
+  .video-section {
+    padding: 96px 0;
+    background: var(--offwhite);
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--black);
+    margin-bottom: 18px;
+  }
+
+  .section-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    max-width: 620px;
+    margin-bottom: 40px;
+  }
+
+  .video-embed {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--black);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 24px 64px rgba(0,0,0,.18);
+    margin-top: 36px;
+  }
+
+  .video-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  .video-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+    color: rgba(255,255,255,.6);
+  }
+  .video-placeholder__icon {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: var(--red);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: transform .2s, background .2s;
+  }
+  .video-placeholder__icon:hover { transform: scale(1.08); background: #e01025; }
+  .video-placeholder__icon svg { margin-left: 4px; }
+  .video-placeholder p { font-size: 15px; font-weight: 500; }
+  .video-placeholder small { font-size: 12px; opacity: .5; }
+
+  /* ════════════════════════════
+     TOUR STOPS
+  ════════════════════════════ */
+  .stops-section {
+    padding: 96px 0;
+    background: var(--light);
+  }
+
+  .stops-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-top: 44px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .stop-card {
+    padding: 28px 20px;
+    border-right: 1px solid #ddd;
+    background: #fff;
+    text-align: center;
+    transition: background .2s, transform .2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .stop-card:last-child { border-right: none; }
+  .stop-card:hover { background: var(--offwhite); }
+
+  .stop-card::after {
+    content: '✓';
+    position: absolute;
+    top: 10px; right: 12px;
+    font-size: 11px;
+    color: var(--green);
+    font-weight: 700;
+    background: #e6f7ec;
+    border-radius: 999px;
+    width: 20px; height: 20px;
+    display: flex; align-items: center; justify-content: center;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  .stop-card__date {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+
+  .stop-card__name {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--black);
+    margin-bottom: 8px;
+  }
+
+  .stop-card__city {
+    font-size: 13px;
+    color: #666;
+  }
+
+  /* ════════════════════════════
+     GET INVOLVED 2027
+  ════════════════════════════ */
+  .involve-section {
+    padding: 96px 0;
+    background: var(--offwhite);
+  }
+
+  .involve-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .involve-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 40px 32px;
+    border-top: 5px solid transparent;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    transition: transform .22s, box-shadow .22s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+  .involve-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0,0,0,.12);
+  }
+
+  .involve-card:nth-child(1) { border-top-color: var(--red); }
+  .involve-card:nth-child(2) { border-top-color: var(--green); }
+  .involve-card:nth-child(3) { border-top-color: var(--blue); }
+
+  .involve-card__icon {
+    font-size: 36px;
+    margin-bottom: 18px;
+    display: block;
+  }
+
+  .involve-card__title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--black);
+  }
+
+  .involve-card__body {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+    flex: 1;
+    margin-bottom: 28px;
+  }
+
+  .involve-card__link {
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .involve-card:nth-child(1) .involve-card__link { color: var(--red); }
+  .involve-card:nth-child(2) .involve-card__link { color: var(--green); }
+  .involve-card:nth-child(3) .involve-card__link { color: var(--blue); }
+  .involve-card__link::after { content: '→'; }
+
+  /* ════════════════════════════
+     DONATION CTA
+  ════════════════════════════ */
+  .donate-section {
+    background: var(--red2);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .donate-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,.03) 40px,
+      rgba(255,255,255,.03) 41px
+    );
+  }
+  .donate-section .container { position: relative; z-index: 2; }
+  .donate-section .section-title { color: #fff; }
+  .donate-section .section-body {
+    color: rgba(255,255,255,.8);
+    margin: 0 auto 36px;
+    max-width: 560px;
+  }
+
+  /* ════════════════════════════
+     ✅ FIX 3: SITE FOOTER
+  ════════════════════════════ */
+  .site-footer {
+    background: var(--black);
+    border-top: 3px solid var(--red);
+    color: rgba(255,255,255,.7);
+    padding: 56px 0 32px;
+  }
+
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    margin-bottom: 32px;
+  }
+
+  .footer__brand-name {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .footer__brand-full {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .footer__brand-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 280px;
+    margin-bottom: 20px;
+  }
+
+  .footer__address {
+    font-size: 13px;
+    line-height: 1.8;
+    font-style: normal;
+    color: rgba(255,255,255,.5);
+  }
+
+  .footer__social {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .footer__social a {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,.6);
+    text-decoration: none;
+    font-size: 15px;
+    transition: background .18s, color .18s;
+  }
+  .footer__social a:hover {
+    background: var(--red);
+    color: #fff;
+    border-color: var(--red);
+  }
+
+  .footer__col-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+    margin-bottom: 16px;
+  }
+
+  .footer__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer__links a {
+    font-size: 14px;
+    color: rgba(255,255,255,.65);
+    text-decoration: none;
+    transition: color .18s;
+  }
+  .footer__links a:hover { color: #fff; }
+
+  .footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer__copy {
+    font-size: 12px;
+    color: rgba(255,255,255,.35);
+  }
+
+  .footer__ein {
+    font-size: 12px;
+    color: rgba(255,255,255,.3);
+  }
+
+  /* ════════════════════════════
+     RESPONSIVE
+  ════════════════════════════ */
+  @media (max-width: 900px) {
+    .hero__inner { grid-template-columns: 1fr; }
+    .hero__badge-wrap { display: none; }
+    .stats__grid { grid-template-columns: repeat(2, 1fr); }
+    .stat-tile { border-bottom: 1px solid rgba(255,255,255,.08); }
+    .stops-grid {
+      grid-template-columns: 1fr;
+      border: none;
+      gap: 12px;
+    }
+    .stop-card { border-right: none; border: 1px solid #ddd; border-radius: 8px; }
+    .involve-grid { grid-template-columns: 1fr; }
+    .footer__grid { grid-template-columns: 1fr; gap: 32px; }
+    .site-nav__links { display: none; }
+    .site-nav__links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 64px;
+      left: 0; right: 0;
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 16px 24px;
+      gap: 4px;
+    }
+    .nav-toggle { display: flex; }
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 70px 0 60px; }
+    .stats__grid { grid-template-columns: repeat(2, 1fr); }
+    .hero__btns { flex-direction: column; }
+    .btn { justify-content: center; }
+    .footer__bottom { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════
+     ✅ FIX 2: SITE NAVIGATION
+════════════════════════════ -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="site-nav__inner">
+    <a href="https://yknotinc.org/" class="site-nav__logo" aria-label="Y-KNOT Inc. Home">
+      <div class="site-nav__logo-mark">Y·K</div>
+      <div class="site-nav__logo-text">
+        <span class="site-nav__logo-name">Y-KNOT Inc.</span>
+        <span class="site-nav__logo-tag">Knowledge · Nurturing · Opportunities · Teaching</span>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="site-nav__links">
+      <li><a href="https://yknotinc.org/about/">About</a></li>
+      <li><a href="https://yknotinc.org/programs/">Programs</a></li>
+      <li><a href="https://yknotinc.org/mobile-prom-boutique/">Prom Boutique</a></li>
+      <li><a href="https://yknotinc.org/events/">Events</a></li>
+      <li><a href="https://yknotinc.org/volunteer-sign-up/">Volunteer</a></li>
+      <li><a href="https://yknotinc.org/donate/" class="nav-cta">Donate</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ════════════════════════════
+     HERO
+════════════════════════════ -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero__inner">
+      <div class="fade-up">
+        <p class="hero__eyebrow">🎉 Season Complete — 2026</p>
+        <h1 class="hero__title">The 2026 Tour<br>Is a <span>Wrap!</span></h1>
+        <p class="hero__sub">410 Students. 5 Cities. One Mission.</p>
+        <p class="hero__body">
+          The Mobile Prom Boutique 2026 has officially closed its doors — and what a season it was!
+          This year, Y-KNOT traveled across New Jersey, Maryland, and Virginia to bring the ultimate
+          prom experience right to the community, at absolutely no cost to the students we served.
+        </p>
+        <div class="hero__btns">
+          <a href="#recap-video" class="btn btn--primary">▶&nbsp; Watch the Recap</a>
+          <a href="#get-involved-2027" class="btn btn--secondary">Get Involved for 2027</a>
+          <a href="https://yknotinc.org/donate/" class="btn btn--outline" target="_blank">Donate</a>
+        </div>
+      </div>
+      <div class="hero__badge-wrap fade-up" style="transition-delay:.15s">
+        <div class="season-badge">
+          <span class="season-badge__num">6</span>
+          <span class="season-badge__label">Years Strong</span>
+        </div>
+        <div class="season-pills">
+          <span class="season-pill">📍 Bridgeton, NJ</span>
+          <span class="season-pill">📍 Laurel, MD</span>
+          <span class="season-pill">📍 Forestville, MD</span>
+          <span class="season-pill">📍 Portsmouth, VA</span>
+          <span class="season-pill">📍 Newport News, VA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     STATS BAR
+════════════════════════════ -->
+<section class="stats">
+  <div class="container" style="padding:0;">
+    <div class="stats__grid">
+      <div class="stat-tile fade-up">
+        <div class="stat-tile__num">410</div>
+        <div class="stat-tile__label">Youth Served</div>
+      </div>
+      <div class="stat-tile fade-up" style="transition-delay:.1s">
+        <div class="stat-tile__num">5</div>
+        <div class="stat-tile__label">Cities</div>
+      </div>
+      <div class="stat-tile fade-up" style="transition-delay:.2s">
+        <div class="stat-tile__num">3</div>
+        <div class="stat-tile__label">States</div>
+      </div>
+      <div class="stat-tile fade-up" style="transition-delay:.3s">
+        <div class="stat-tile__num">$0</div>
+        <div class="stat-tile__label">Cost to Students</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     VIDEO SECTION
+════════════════════════════ -->
+<section class="video-section" id="recap-video">
+  <div class="container">
+    <div class="fade-up">
+      <p class="section-label">Tour Recap</p>
+      <h2 class="section-title">Relive the Magic —<br>Watch the 2026 Tour Recap</h2>
+      <p class="section-body">
+        From Bridgeton, NJ to Newport News, VA — we brought prom to the people. Watch the highlights
+        from our 2026 Mobile Prom Boutique Tour and see what it means when a community shows up for its young people.
+      </p>
+    </div>
+
+    <div class="video-embed fade-up" style="transition-delay:.15s" id="video-container">
+      <!--
+        TO EMBED YOUR VIDEO:
+        Replace the placeholder div below with an <iframe> from YouTube or Facebook.
+
+        YouTube example:
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+
+        Facebook example:
+        <iframe src="https://www.facebook.com/plugins/video.php?href=YOUR_ENCODED_URL" allowfullscreen></iframe>
+      -->
+      <div class="video-placeholder">
+        <div class="video-placeholder__icon" onclick="alert('Add your video embed URL in the HTML')">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+        <p>2026 Mobile Prom Boutique — Tour Recap</p>
+        <small>Insert your YouTube or Facebook video embed here</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     TOUR STOPS
+════════════════════════════ -->
+<section class="stops-section">
+  <div class="container">
+    <div class="fade-up">
+      <p class="section-label">Where We Went</p>
+      <h2 class="section-title">2026 Tour Stops</h2>
+      <p class="section-body">
+        Five stops. Five communities. Hundreds of students who deserved to walk into prom night
+        feeling their absolute best.
+      </p>
+    </div>
+    <div class="stops-grid fade-up" style="transition-delay:.1s">
+      <div class="stop-card">
+        <div class="stop-card__date">March 14</div>
+        <div class="stop-card__name">ALMS Center</div>
+        <div class="stop-card__city">Bridgeton, NJ</div>
+      </div>
+      <div class="stop-card">
+        <div class="stop-card__date">March 21</div>
+        <div class="stop-card__name">Laurel High School</div>
+        <div class="stop-card__city">Laurel, MD</div>
+      </div>
+      <div class="stop-card">
+        <div class="stop-card__date">March 28</div>
+        <div class="stop-card__name">Suitland Community Center</div>
+        <div class="stop-card__city">Forestville, MD</div>
+      </div>
+      <div class="stop-card">
+        <div class="stop-card__date">April 11</div>
+        <div class="stop-card__name">I.C. Norcom High School</div>
+        <div class="stop-card__city">Portsmouth, VA</div>
+      </div>
+      <div class="stop-card">
+        <div class="stop-card__date">April 18</div>
+        <div class="stop-card__name">Heritage High School</div>
+        <div class="stop-card__city">Newport News, VA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     GET INVOLVED 2027
+════════════════════════════ -->
+<section class="involve-section" id="get-involved-2027">
+  <div class="container">
+    <div class="fade-up">
+      <p class="section-label">Looking Ahead</p>
+      <h2 class="section-title">Be Part of the 2027 Season</h2>
+      <p class="section-body">
+        Planning for 2027 is already underway. Whether you want to donate, volunteer, or bring the
+        boutique to your school or city — we want to hear from you.
+      </p>
+    </div>
+    <div class="involve-grid">
+      <div class="involve-card fade-up" style="transition-delay:.05s">
+        <span class="involve-card__icon">🎽</span>
+        <h3 class="involve-card__title">Volunteer</h3>
+        <p class="involve-card__body">
+          Lend your time and energy to help make prom dreams a reality for students in your community.
+          Every hand on deck makes a difference.
+        </p>
+        <a href="https://yknotinc.org/volunteer-sign-up/" class="involve-card__link">Sign Up to Volunteer</a>
+      </div>
+      <div class="involve-card fade-up" style="transition-delay:.12s">
+        <span class="involve-card__icon">👗</span>
+        <h3 class="involve-card__title">Donate Formal Wear</h3>
+        <p class="involve-card__body">
+          Every dress, suit, or accessory you donate gives a student a moment they'll remember forever.
+          Find a drop-off location near you.
+        </p>
+        <a href="https://yknotinc.org/drop-off-locations/" class="involve-card__link">Find a Drop-Off Location</a>
+      </div>
+      <div class="involve-card fade-up" style="transition-delay:.2s">
+        <span class="involve-card__icon">🏫</span>
+        <h3 class="involve-card__title">Host a Stop</h3>
+        <p class="involve-card__body">
+          Is your school, community center, or organization ready to be a 2027 boutique location?
+          We'd love to bring the boutique to your community.
+        </p>
+        <a href="mailto:rgibbons@yknotinc.org" class="involve-card__link">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     DONATION CTA
+════════════════════════════ -->
+<section class="donate-section">
+  <div class="container">
+    <div class="fade-up">
+      <p class="section-label" style="color:rgba(255,255,255,.6); text-align:center;">Support the Mission</p>
+      <h2 class="section-title">Help Us Do It Again in 2027</h2>
+      <p class="section-body">
+        Your donations make this program possible. Every contribution goes directly toward providing free formal wear
+        and reducing the financial barriers that stand between a young person and their prom night.
+      </p>
+      <a href="https://yknotinc.org/donate/" class="btn btn--secondary" target="_blank">Make a Donation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     ✅ FIX 3: SITE FOOTER
+════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+
+      <!-- Brand column -->
+      <div>
+        <div class="footer__brand-name">Y-KNOT Inc.</div>
+        <div class="footer__brand-full">Knowledge · Nurturing · Opportunities · Teaching</div>
+        <p class="footer__brand-desc">
+          A 501(c)(3) nonprofit serving under-resourced youth and families across the DMV area
+          and Cumberland County, NJ through mentorship, education, and community programs.
+        </p>
+        <address class="footer__address">
+          6178 Oxon Hill Road, Suite 303<br>
+          Oxon Hill, MD 20745<br>
+          <a href="mailto:rgibbons@yknotinc.org" style="color:rgba(255,255,255,.5); text-decoration:none;">rgibbons@yknotinc.org</a>
+        </address>
+        <div class="footer__social">
+          <a href="https://www.facebook.com/yknotinc" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/yknotinc" target="_blank" rel="noopener" aria-label="Instagram">in</a>
+          <a href="https://www.linkedin.com/company/y-knot-inc" target="_blank" rel="noopener" aria-label="LinkedIn">li</a>
+        </div>
+      </div>
+
+      <!-- Programs column -->
+      <div>
+        <div class="footer__col-title">Programs</div>
+        <ul class="footer__links">
+          <li><a href="https://yknotinc.org/mobile-prom-boutique/">Mobile Prom Boutique</a></li>
+          <li><a href="https://yknotinc.org/programs/">All Programs</a></li>
+          <li><a href="https://yknotinc.org/mentoring/">Mentoring</a></li>
+          <li><a href="https://yknotinc.org/workforce/">Workforce Development</a></li>
+          <li><a href="https://yknotinc.org/sel/">SEL Programs</a></li>
+        </ul>
+      </div>
+
+      <!-- Get Involved column -->
+      <div>
+        <div class="footer__col-title">Get Involved</div>
+        <ul class="footer__links">
+          <li><a href="https://yknotinc.org/donate/">Donate</a></li>
+          <li><a href="https://yknotinc.org/volunteer-sign-up/">Volunteer</a></li>
+          <li><a href="https://yknotinc.org/drop-off-locations/">Drop-Off Locations</a></li>
+          <li><a href="https://yknotinc.org/events/">Events</a></li>
+          <li><a href="https://yknotinc.org/contact/">Contact Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 Y-KNOT Inc. All rights reserved.</p>
+      <p class="footer__ein">EIN: 30-1022510 &nbsp;|&nbsp; 501(c)(3) Nonprofit Organization</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Intersection Observer for fade-up animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

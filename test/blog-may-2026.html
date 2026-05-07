@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How You Show Up | The Parent You Become</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --deep-teal: #1a4a4a;
+    --warm-gold: #c9a24a;
+    --soft-sage: #7a9e8e;
+    --cream: #faf7f2;
+    --blush: #e8d5c4;
+    --charcoal: #2c2c2c;
+    --mid-gray: #5a5a5a;
+  }
+
+  body {
+    background-color: var(--cream);
+    font-family: 'Lora', Georgia, serif;
+    color: var(--charcoal);
+    line-height: 1.85;
+  }
+
+  /* ── Header ── */
+  .site-header {
+    background: var(--deep-teal);
+    text-align: center;
+    padding: 18px 20px 14px;
+    letter-spacing: 0.18em;
+  }
+  .site-header .blog-name {
+    font-family: 'Playfair Display', serif;
+    color: var(--warm-gold);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    font-style: italic;
+  }
+  .site-header .site-name {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    background: linear-gradient(160deg, var(--deep-teal) 0%, #2d6060 55%, var(--soft-sage) 100%);
+    padding: 80px 24px 90px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(201,162,74,0.15) 0%, transparent 60%);
+  }
+  .hero-label {
+    display: inline-block;
+    border: 1px solid var(--warm-gold);
+    color: var(--warm-gold);
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    color: #fff;
+    line-height: 1.2;
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto 20px;
+  }
+  .hero h1 em {
+    color: var(--warm-gold);
+    font-style: italic;
+  }
+  .hero-sub {
+    color: rgba(255,255,255,0.72);
+    font-size: 1rem;
+    font-style: italic;
+    position: relative;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .hero-meta {
+    margin-top: 36px;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    position: relative;
+  }
+  .hero-divider {
+    width: 48px;
+    height: 2px;
+    background: var(--warm-gold);
+    margin: 24px auto 0;
+    position: relative;
+  }
+
+  /* ── Article Body ── */
+  .article-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 28px 80px;
+  }
+
+  .article-wrap p {
+    font-size: 1.05rem;
+    color: var(--charcoal);
+    margin-bottom: 1.6em;
+  }
+
+  .article-wrap p:first-of-type::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.2rem;
+    float: left;
+    line-height: 0.8;
+    margin: 8px 10px 0 0;
+    color: var(--deep-teal);
+    font-weight: 700;
+  }
+
+  .pull-quote {
+    border-left: 4px solid var(--warm-gold);
+    background: linear-gradient(to right, rgba(201,162,74,0.07), transparent);
+    margin: 44px 0;
+    padding: 24px 28px 24px 32px;
+  }
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--deep-teal);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--soft-sage);
+    margin-bottom: 8px;
+    margin-top: 48px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--deep-teal);
+    margin-bottom: 20px;
+    line-height: 1.35;
+  }
+
+  /* ── Reflection Callout ── */
+  .reflection-box {
+    background: var(--deep-teal);
+    color: #fff;
+    border-radius: 4px;
+    padding: 40px 36px;
+    margin: 52px 0;
+  }
+  .reflection-box .rb-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--warm-gold);
+    margin-bottom: 16px;
+  }
+  .reflection-box p {
+    color: rgba(255,255,255,0.88);
+    font-size: 0.97rem;
+    margin-bottom: 1em;
+  }
+  .reflection-box p:last-child { margin-bottom: 0; }
+  .reflection-box .rb-question {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #fff;
+    font-size: 1.05rem;
+    padding-left: 16px;
+    border-left: 2px solid var(--warm-gold);
+    margin: 14px 0;
+  }
+
+  /* ── Closing ── */
+  .closing-band {
+    background: var(--blush);
+    text-align: center;
+    padding: 56px 28px;
+    margin-top: 16px;
+  }
+  .closing-band .cb-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--soft-sage);
+    margin-bottom: 16px;
+  }
+  .closing-band h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--deep-teal);
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+  .closing-band p {
+    max-width: 560px;
+    margin: 0 auto 20px;
+    color: var(--mid-gray);
+    font-size: 0.95rem;
+  }
+  .closing-band a {
+    display: inline-block;
+    background: var(--deep-teal);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    margin-top: 8px;
+    transition: background 0.2s;
+  }
+  .closing-band a:hover { background: var(--warm-gold); }
+
+  /* ── Footer strip ── */
+  .footer-strip {
+    background: var(--deep-teal);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+  .footer-strip span { color: var(--warm-gold); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="blog-name">The Parent You Become</div>
+  <div class="site-name">Y-KNOT Inc. &nbsp;·&nbsp; yknotinc.org</div>
+</header>
+
+<section class="hero">
+  <div class="hero-label">Mental Health Awareness · May 2025</div>
+  <h1>How You <em>Show Up</em><br>Is How They Learn to Show Up</h1>
+  <p class="hero-sub">A reflection for parents and the young people watching them — on presence, pain, and the patterns we pass down</p>
+  <div class="hero-meta">By Regina Gibbons, Ed.S. &nbsp;·&nbsp; Founder, Y-KNOT Inc.</div>
+  <div class="hero-divider"></div>
+</section>
+
+<article class="article-wrap">
+
+  <p>
+    May arrives every year with its greening trees and longer days, and alongside them, the reminder that mental health deserves our full attention. Not just a checkbox. Not just an awareness ribbon. Our full, honest, sometimes uncomfortable attention. This month, I want to sit with a question that I believe sits at the heart of both parenting and youth development: <em>How are you showing up?</em>
+  </p>
+
+  <p>
+    Not for the world. Not for your employer. Not for the parent group chat. I mean in the quiet moments — in the car, at the dinner table, in the hallway between one hard thing and the next. How are <em>you</em> showing up there?
+  </p>
+
+  <div class="pull-quote">
+    <p>"Parents parent from the place of their beliefs. And long before a child can articulate what they believe about themselves, they are watching you — absorbing your posture toward life."</p>
+  </div>
+
+  <p>
+    Here at Y-KNOT, we work alongside young people ages 5 to 21 who are navigating a world that asks a great deal of them. They face academic pressure, social comparison, grief, identity questions, and the particular weight of growing up in under-resourced communities. What our staff and mentors see again and again is this: a young person's emotional posture — how they handle disappointment, how they ask for help (or whether they allow themselves to at all), how they speak to themselves in moments of failure — almost always reflects a pattern they inherited. Not genetically. Relationally.
+  </p>
+
+  <p>
+    They learned it by watching you.
+  </p>
+
+  <div class="section-label">For the Parents</div>
+  <h2>The Mirror You Didn't Know You Were Holding</h2>
+
+  <p>
+    Mental health conversations in parenting spaces often center on our children — their anxiety, their moods, their diagnoses. And those conversations matter deeply. But I want to gently turn the mirror around for a moment. Because one of the most protective things you can do for your child's mental health is attend to your own.
+  </p>
+
+  <p>
+    When you white-knuckle through your grief without naming it, your child learns that emotions are things to be hidden. When you respond to your own mistakes with savage self-criticism, your child internalizes the message that failure is an identity, not an event. When you stay relentlessly busy — never sitting still, never exhaling, never letting anyone in — your child learns that rest is weakness and vulnerability is risk.
+  </p>
+
+  <p>
+    None of this is your fault. Most of us parent from patterns we were handed without a note of explanation. We show up the way we were shown how to show up. But awareness is where the inheritance can stop. Awareness is where <em>you</em> get to make a different choice.
+  </p>
+
+  <div class="pull-quote">
+    <p>"You don't have to have it all together to show up well. You just have to be honest about where you are — and willing to let your child see what it looks like to keep going anyway."</p>
+  </div>
+
+  <p>
+    Showing up well for your child's mental health does not mean performing wellness. It means letting them see you take a breath before you respond instead of react. It means saying, "I was wrong about that, and I'm sorry." It means admitting when you are tired — and then demonstrating that tired people still get up, still ask for help, still choose love. That is the most powerful mental health curriculum your child will ever receive.
+  </p>
+
+  <div class="section-label">For the Young People</div>
+  <h2>You Also Get to Decide How You Show Up</h2>
+
+  <p>
+    If you are a young person reading this — or if you share this with the teenagers and young adults in your life — I want to speak directly to you for a moment.
+  </p>
+
+  <p>
+    You have inherited things. Patterns, fears, ways of seeing yourself that were handed to you before you had any say in the matter. Some of those things are gifts. Some of them are weights. And here is what I need you to know: inheriting something is not the same as being defined by it.
+  </p>
+
+  <p>
+    How you show up for yourself — in the private conversation you have inside your own mind, in how you treat your own struggles, in whether you allow yourself to rest, to feel, to ask for support — that is something you are already beginning to shape. Mental health is not just something that happens to you. It is also something you practice. Daily. In the small choices no one else sees.
+  </p>
+
+  <p>
+    Showing up for yourself might look like telling the truth when someone asks if you are okay. It might look like putting the phone down and sitting with a feeling long enough to name it. It might look like choosing one person — just one — to trust with the real version of you. None of that is weakness. All of it is courage.
+  </p>
+
+  <div class="reflection-box">
+    <div class="rb-label">✦ Pause & Reflect</div>
+    <p>Before you close this page, sit with these questions — one at a time, without rushing:</p>
+    <p class="rb-question">What emotional pattern did I inherit that I am still living out today?</p>
+    <p class="rb-question">When did someone's <em>presence</em> — not their words, but how they showed up — change something for me?</p>
+    <p class="rb-question">If the young people in my life could only learn one thing from watching me this month, what do I hope it would be?</p>
+    <p>You don't have to answer these out loud. But I invite you to let them settle somewhere real in you. Reflection is the beginning of every meaningful change.</p>
+  </div>
+
+  <div class="section-label">Closing Thought</div>
+  <h2>Mental Health Isn't a Destination. It's a Daily Direction.</h2>
+
+  <p>
+    This Mental Health Awareness Month, I am not asking you to be healed. I am asking you to be honest. Honest with yourself about where you are. Honest with the people you love about what you need. Honest about the patterns you may have been carrying so long, they feel like just who you are.
+  </p>
+
+  <p>
+    They are not just who you are. They are where you have been. And where you go from here — the parent you become, the young person you grow into — that story is still being written.
+  </p>
+
+  <p>
+    How you show up today is writing it.
+  </p>
+
+</article>
+
+<div class="closing-band">
+  <div class="cb-label">Continue the Conversation</div>
+  <h3>Y-KNOT walks alongside youth and families — every step of the way.</h3>
+  <p>
+    Y-KNOT Inc. provides mentoring, social-emotional learning, workforce development, and family support programs for young people ages 5–21 in Prince George's County, MD and Cumberland County, NJ.
+  </p>
+  <a href="https://yknotinc.org">Learn More at yknotinc.org</a>
+</div>
+
+<div class="footer-strip">
+  © 2025 <span>Y-KNOT Inc.</span> &nbsp;·&nbsp; 6178 Oxon Hill Road, Suite 303, Oxon Hill, MD 20745 &nbsp;·&nbsp; <span>yknotinc.org</span>
+</div>
+
+</body>
+</html>
